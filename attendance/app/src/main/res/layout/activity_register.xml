@@ -18,6 +18,7 @@
         android:layout_marginTop="100dp"/>
 
     <EditText
+        android:id="@+id/edtStuNo"
         android:hint="학번"
         android:layout_width="300dp"
         android:layout_height="50dp"
@@ -26,6 +27,7 @@
         android:backgroundTint="@color/black"
         android:textCursorDrawable="@color/black"/>
     <EditText
+        android:id="@+id/edtPassword"
         android:hint="비밀번호"
         android:layout_width="300dp"
         android:layout_height="50dp"
@@ -34,6 +36,7 @@
         android:backgroundTint="@color/black"
         android:textCursorDrawable="@color/black"/>
     <EditText
+        android:id="@+id/edtPasswordConfirm"
         android:hint="비밀번호 확인"
         android:layout_width="300dp"
         android:layout_height="50dp"

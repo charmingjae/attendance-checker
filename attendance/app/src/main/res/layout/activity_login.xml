@@ -18,6 +18,7 @@
         android:layout_marginTop="100dp"/>
 
     <EditText
+        android:id="@+id/edtLoginNUM"
         android:hint="학번"
         android:layout_width="300dp"
         android:layout_height="50dp"
@@ -26,6 +27,7 @@
         android:backgroundTint="@color/black"
         android:textCursorDrawable="@color/black"/>
     <EditText
+        android:id="@+id/edtLoginPW"
         android:hint="비밀번호"
         android:layout_width="300dp"
         android:layout_height="50dp"

@@ -1,6 +1,7 @@
 package com.inhatc.attendance;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.hardware.biometrics.BiometricPrompt;
 import android.os.Bundle;
 import android.util.Log;
@@ -72,6 +73,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                     if(task.isSuccessful()){
                         Toast.makeText(RegisterActivity.this, "회원가입 완료", Toast.LENGTH_SHORT).show();
                         finish();
+                        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                     }else{
                         Toast.makeText(RegisterActivity.this, "Error", Toast.LENGTH_SHORT).show();
                     }

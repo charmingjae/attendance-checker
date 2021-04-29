@@ -3,6 +3,7 @@ package com.inhatc.attendance;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -38,13 +39,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         //initializig firebase auth object
         firebaseAuth = FirebaseAuth.getInstance();
-//
-//        if(firebaseAuth.getCurrentUser() != null){
-//            // 이미 로그인 되었다면 이 액티비티를 종료함
-//            finish();
-//            // 그리고 Main 액티비티를 연다.
-//            startActivity(new Intent(getApplicationContext(), MainActivity.class));
-//        }
+
+        if(firebaseAuth.getCurrentUser() != null){
+            // How to get logined user email
+            Log.i("LoginActivity",firebaseAuth.getCurrentUser().getEmail());
+            // 이미 로그인 되었다면 이 액티비티를 종료함
+            finish();
+            // 그리고 Main 액티비티를 연다.
+            startActivity(new Intent(getApplicationContext(), UserInfoActivity.class));
+        }
     }
 
     //firebase userLogin method
@@ -64,7 +67,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         if(task.isSuccessful()) {
                             finish();
                             progressDialog.dismiss();
-                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                            startActivity(new Intent(getApplicationContext(), UserInfoActivity.class));
                         } else {
                             progressDialog.dismiss();
                             Toast.makeText(getApplicationContext(), "로그인 실패!", Toast.LENGTH_LONG).show();

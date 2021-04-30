@@ -2,6 +2,7 @@ package com.inhatc.attendance;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -32,8 +33,8 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
     TextView txtAttendTime;
     Button btnDoLogout;
     Button btnTestAttendance;
-
-    ProgressDialog progressDialog;
+    Button btnGoAdminMenu;
+    
     FirebaseAuth firebaseAuth;
     String strStuNo;
 
@@ -49,6 +50,7 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
         txtAttendTime = (TextView) findViewById(R.id.txtAttendTime);
         btnDoLogout = (Button) findViewById(R.id.btnDoLogout);
         btnTestAttendance = (Button) findViewById(R.id.btnTestAttendance);
+        btnGoAdminMenu = (Button) findViewById(R.id.btnGoAdminMenu);
         btnDoLogout.setOnClickListener(this);
         btnTestAttendance.setOnClickListener(this);
 
@@ -62,6 +64,10 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
         readUser();
+
+        String getStudentNum = studentNum.getText().toString();
+
+        Log.i("TAG", getStudentNum);
 
     }
 
@@ -94,21 +100,44 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void readUser(){
-        String studentNum = firebaseAuth.getCurrentUser().getEmail().substring(0,9);
-        mDatabase.child("users").child(studentNum).addValueEventListener(new ValueEventListener() {
+        String strStudentNum = firebaseAuth.getCurrentUser().getEmail().substring(0,9);
+        mDatabase.child("users").child(strStudentNum).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 // Get Post object and use the values to update the UI
                 if(dataSnapshot.getValue(User.class) != null){
                     User post = dataSnapshot.getValue(User.class);
                     Log.w("FireBaseData", "getData : " + post.getUserAttendance());
-                    if(post.getUserAttendance() != null){
-                        txtAttendWhether.setText(post.getUserAttendance());
-                        txtAttendTime.setText(post.getUserAttendTime());
-                    }else{
-                        txtAttendWhether.setText(' ');
-                        txtAttendTime.setText(' ');
+
+                    if (post.getUserPosition() != null) {
+
+                        if(post.getUserPosition().equals("professor")){
+                            studentNum.setTextColor(Color.BLUE);
+
+                            txtAttendTime.setVisibility(View.GONE);
+                            txtAttendWhether.setVisibility(View.GONE);
+//            btnDoLogout.setVisibility(View.GONE);
+                            btnTestAttendance.setVisibility(View.GONE);
+
+                            btnGoAdminMenu.setVisibility(View.VISIBLE);
+                        }
+                        else{
+                            txtAttendTime.setVisibility(View.VISIBLE);
+                            txtAttendWhether.setVisibility(View.VISIBLE);
+//            btnDoLogout.setVisibility(View.VISIBLE);
+                            btnTestAttendance.setVisibility(View.VISIBLE);
+
+                            btnGoAdminMenu.setVisibility(View.GONE);
+                            if(post.getUserAttendance() != null){
+                                txtAttendWhether.setText(post.getUserAttendance());
+                                txtAttendTime.setText(post.getUserAttendTime());
+                            }else{
+                                txtAttendWhether.setText(' ');
+                                txtAttendTime.setText(' ');
+                            }
+                        }
                     }
+
                 } else {
                     Toast.makeText(UserInfoActivity.this, "데이터 없음...", Toast.LENGTH_SHORT).show();
                 }

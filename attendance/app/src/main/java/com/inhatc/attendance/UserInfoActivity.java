@@ -6,19 +6,14 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.widget.TextViewCompat;
 
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -26,11 +21,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import org.w3c.dom.Text;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.HashMap;
 
 
 public class UserInfoActivity extends AppCompatActivity implements View.OnClickListener{
@@ -75,24 +67,29 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
 
 
     private void writeNewUser(String userId, String userNumber, String userAttendance, String userAttendTime, String userPosition) {
-        User user = new User(userNumber, userAttendance, userAttendTime, userPosition);
+        String getAttend = txtAttendWhether.getText().toString();
+        if(getAttend.equals("O")){
+            Toast.makeText(UserInfoActivity.this, "이미 출석 완료 상태입니다.", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            User user = new User(userNumber, userAttendance, userAttendTime, userPosition);
 
-        mDatabase.child("users").child(userId).setValue(user)
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        // Write was successful!
-                        Toast.makeText(UserInfoActivity.this, "출석 완료", Toast.LENGTH_SHORT).show();
-                        readUser();
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        // Write failed
-                        Toast.makeText(UserInfoActivity.this, "저장을 실패했습니다.", Toast.LENGTH_SHORT).show();
-                    }
-                });
+            mDatabase.child("users").child(userId).setValue(user)
+                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            // Write was successful!
+                            Toast.makeText(UserInfoActivity.this, "출석 완료", Toast.LENGTH_SHORT).show();
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            // Write failed
+                            Toast.makeText(UserInfoActivity.this, "저장을 실패했습니다.", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+        }
 
     }
 
@@ -126,7 +123,6 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
     }
 
 
-
     @Override
     public void onClick(View view){
         if(view == btnDoLogout) {
@@ -143,11 +139,16 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
             try{
                 String getUserName = studentNum.getText().toString();
                 SimpleDateFormat format1 = new SimpleDateFormat ( "MM-dd HH:mm:ss");
-
                 Date time = new Date();
-
                 String time1 = format1.format(time);
-                writeNewUser(getUserName,getUserName,"O", time1, "student");
+
+                if(getUserName.equals("professor")){
+                    writeNewUser(getUserName,getUserName,"O", time1, "professor");
+                }
+                else{
+                    writeNewUser(getUserName,getUserName,"O", time1, "student");
+                }
+
             }catch(Exception e){
                 Log.i("Exception", e.getMessage());
                 return;

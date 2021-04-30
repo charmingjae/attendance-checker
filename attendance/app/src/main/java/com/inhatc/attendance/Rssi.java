@@ -89,7 +89,7 @@ public class Rssi extends AppCompatActivity{
 
         mStart_scan = (Button) findViewById(R.id.btnGetRssi);
 
-//        mRecycle = (RecyclerView) findViewById(R.id.recyeler);
+        mRecycle = (RecyclerView) findViewById(R.id.recyeler);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         mRecycle.setLayoutManager(layoutManager);
         mAdapter = new BeaconListAdapter();

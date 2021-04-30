@@ -21,7 +21,7 @@ public class BeaconListAdapter extends RecyclerView.Adapter<com.inhatc.attendanc
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = View.inflate(parent.getContext(), R.layout.activity_getrssi, null);
+        View view = View.inflate(parent.getContext(), R.layout.main_item, null);
         return new MyViewHolder(view);
     }
 
@@ -72,7 +72,7 @@ public class BeaconListAdapter extends RecyclerView.Adapter<com.inhatc.attendanc
 
         public MyViewHolder(View itemView) {
             super(itemView);
-            mDevice_name = (TextView) itemView.findViewById(R.id.txtRssi);
+            mDevice_name = (TextView) itemView.findViewById(R.id.device_name);
         }
 
         public void setDataAndUi(MinewBeacon minewBeacon) {

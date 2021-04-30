@@ -31,4 +31,11 @@
         app:backgroundTint="@color/black"
         android:visibility="visible"/>
 
+    <RecyclerView
+        android:id="@+id/recyeler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </RecyclerView>
+
 </LinearLayout>

@@ -19,4 +19,16 @@
         android:textStyle="bold"
         android:visibility="visible"/>
 
+    <Button
+        android:id="@+id/btnGetRssi"
+        android:layout_width="300dp"
+        android:layout_height="55dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:text="[TEST] 출석"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:backgroundTint="@color/black"
+        android:visibility="visible"/>
+
 </LinearLayout>

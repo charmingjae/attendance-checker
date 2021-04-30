@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.widget.TextViewCompat;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -36,6 +37,7 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
 
     TextView studentNum;
     TextView txtAttendWhether;
+    TextView txtAttendTime;
     Button btnDoLogout;
     Button btnTestAttendance;
 
@@ -52,6 +54,7 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
 
         studentNum =(TextView) findViewById(R.id.studentNum);
         txtAttendWhether = (TextView) findViewById(R.id.txtAttendWhether);
+        txtAttendTime = (TextView) findViewById(R.id.txtAttendTime);
         btnDoLogout = (Button) findViewById(R.id.btnDoLogout);
         btnTestAttendance = (Button) findViewById(R.id.btnTestAttendance);
         btnDoLogout.setOnClickListener(this);
@@ -65,6 +68,8 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
         studentNum.setText(strStuNo);
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
+
+        readUser();
 
     }
 
@@ -89,33 +94,35 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
                 });
 
     }
-//
-//    private void readUser(){
-//        String studentNum = firebaseAuth.getCurrentUser().getEmail().substring(0,9);
-//        mDatabase.child("users").child(studentNum).addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                // Get Post object and use the values to update the UI
-//                if(dataSnapshot.getValue(User.class) != null){
-//                    User post = dataSnapshot.getValue(User.class);
-//                    Log.w("FireBaseData", "getData : " + post.getUserAttendance());
-//                    if(post.getUserAttendance() != null){
-//                        txtAttendWhether.setText(post.getUserAttendance());
-//                    }else{
-//                        txtAttendWhether.setText('X');
-//                    }
-//                } else {
-//                    Toast.makeText(UserInfoActivity.this, "데이터 없음...", Toast.LENGTH_SHORT).show();
-//                }
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//                // Getting Post failed, log a message
-//                Log.w("FireBaseData", "loadPost:onCancelled", databaseError.toException());
-//            }
-//        });
-//    }
+
+    private void readUser(){
+        String studentNum = firebaseAuth.getCurrentUser().getEmail().substring(0,9);
+        mDatabase.child("AttendRecord").child(studentNum).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                // Get Post object and use the values to update the UI
+                if(dataSnapshot.getValue(User.class) != null){
+                    User post = dataSnapshot.getValue(User.class);
+                    Log.w("FireBaseData", "getData : " + post.getUserAttendance());
+                    if(post.getUserAttendance() != null){
+                        txtAttendWhether.setText(post.getUserAttendance());
+                        txtAttendTime.setText(post.getUserAttendTime());
+                    }else{
+                        txtAttendWhether.setText(' ');
+                        txtAttendTime.setText(' ');
+                    }
+                } else {
+                    Toast.makeText(UserInfoActivity.this, "데이터 없음...", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                // Getting Post failed, log a message
+                Log.w("FireBaseData", "loadPost:onCancelled", databaseError.toException());
+            }
+        });
+    }
 
 
 

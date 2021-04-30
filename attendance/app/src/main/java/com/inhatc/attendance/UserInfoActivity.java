@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.UserInfo;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -34,7 +35,8 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
     Button btnDoLogout;
     Button btnTestAttendance;
     Button btnGoAdminMenu;
-    
+    ProgressDialog progressDialog;
+
     FirebaseAuth firebaseAuth;
     String strStuNo;
 
@@ -74,8 +76,15 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
 
     private void writeNewUser(String userId, String userNumber, String userAttendance, String userAttendTime, String userPosition) {
         String getAttend = txtAttendWhether.getText().toString();
+
+        progressDialog = new ProgressDialog(UserInfoActivity.this);
+        progressDialog.setMessage("출석중...");
+        progressDialog.show();
+
+
         if(getAttend.equals("O")){
             Toast.makeText(UserInfoActivity.this, "이미 출석 완료 상태입니다.", Toast.LENGTH_SHORT).show();
+            progressDialog.dismiss();
         }
         else{
             User user = new User(userNumber, userAttendance, userAttendTime, userPosition);
@@ -86,6 +95,7 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
                         public void onSuccess(Void aVoid) {
                             // Write was successful!
                             Toast.makeText(UserInfoActivity.this, "출석 완료", Toast.LENGTH_SHORT).show();
+                            progressDialog.dismiss();
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {
@@ -93,6 +103,7 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
                         public void onFailure(@NonNull Exception e) {
                             // Write failed
                             Toast.makeText(UserInfoActivity.this, "저장을 실패했습니다.", Toast.LENGTH_SHORT).show();
+                            progressDialog.dismiss();
                         }
                     });
         }

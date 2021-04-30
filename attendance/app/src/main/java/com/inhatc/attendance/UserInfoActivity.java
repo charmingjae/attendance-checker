@@ -55,6 +55,7 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
         btnGoAdminMenu = (Button) findViewById(R.id.btnGoAdminMenu);
         btnDoLogout.setOnClickListener(this);
         btnTestAttendance.setOnClickListener(this);
+        btnGoAdminMenu.setOnClickListener(this);
 
         firebaseAuth = FirebaseAuth.getInstance();
 
@@ -193,6 +194,9 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
                 Log.i("Exception", e.getMessage());
                 return;
             }
+        }else if(view == btnGoAdminMenu){
+            startActivity(new Intent(getApplicationContext(), Rssi.class));
+            return;
         }
     }
 }

@@ -74,8 +74,8 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
     }
 
 
-    private void writeNewUser(String userId, String userNumber, String userAttendance, String userAttendTime) {
-        User user = new User(userNumber, userAttendance, userAttendTime);
+    private void writeNewUser(String userId, String userNumber, String userAttendance, String userAttendTime, String userPosition) {
+        User user = new User(userNumber, userAttendance, userAttendTime, userPosition);
 
         mDatabase.child("users").child(userId).setValue(user)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -83,6 +83,7 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
                     public void onSuccess(Void aVoid) {
                         // Write was successful!
                         Toast.makeText(UserInfoActivity.this, "출석 완료", Toast.LENGTH_SHORT).show();
+                        readUser();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
@@ -97,7 +98,7 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
 
     private void readUser(){
         String studentNum = firebaseAuth.getCurrentUser().getEmail().substring(0,9);
-        mDatabase.child("AttendRecord").child(studentNum).addValueEventListener(new ValueEventListener() {
+        mDatabase.child("users").child(studentNum).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 // Get Post object and use the values to update the UI
@@ -146,7 +147,7 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
                 Date time = new Date();
 
                 String time1 = format1.format(time);
-                writeNewUser(getUserName,getUserName,"O", time1);
+                writeNewUser(getUserName,getUserName,"O", time1, "student");
             }catch(Exception e){
                 Log.i("Exception", e.getMessage());
                 return;

@@ -5,15 +5,17 @@ public class User {
     public String userNumber;
     public String userAttendance;
     public String userAttendTime;
+    public String userPosition;
 
     public User() {
         // Default constructor required for calls to DataSnapshot.getValue(User.class)
     }
 
-    public User(String userNumber, String userAttendance, String userAttendTime) {
+    public User(String userNumber, String userAttendance, String userAttendTime, String userPosition) {
         this.userNumber = userNumber;
         this.userAttendance = userAttendance;
         this.userAttendTime = userAttendTime;
+        this.userPosition = userPosition;
     }
 
     public String getUserNumber() {
@@ -39,6 +41,10 @@ public class User {
     public void setUserAttendTime(String userAttendTime){
         this.userAttendTime = userAttendTime;
     }
+
+    public String getUserPosition() { return userPosition; }
+
+    public void setUserPosition(String userPosition) {this.userPosition = userPosition;}
 
     @Override
     public String toString() {

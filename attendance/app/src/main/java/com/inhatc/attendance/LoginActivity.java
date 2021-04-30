@@ -45,7 +45,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             Log.i("LoginActivity",firebaseAuth.getCurrentUser().getEmail());
             // 이미 로그인 되었다면 이 액티비티를 종료함
             finish();
-            // 그리고 Main 액티비티를 연다.
+            // 그리고 UserInfo 액티비티를 연다.
             startActivity(new Intent(getApplicationContext(), UserInfoActivity.class));
         }
     }

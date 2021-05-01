@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
     <TextView
         android:id="@+id/studentNum"
         android:layout_width="wrap_content"
@@ -21,7 +22,7 @@
         android:id="@+id/txtAttendWhether"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="1dp"
         android:layout_gravity="center"
         android:text="Loading..."
         android:textColor="@color/black"
@@ -75,6 +76,14 @@
         android:textStyle="bold"
         app:backgroundTint="@color/black"
         android:visibility="gone"/>
+
+<!--    Recycler View-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/main_recyeler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </androidx.recyclerview.widget.RecyclerView>
 
 
 </LinearLayout>

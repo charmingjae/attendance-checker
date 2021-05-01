@@ -2,32 +2,70 @@ package com.inhatc.attendance;
 
 
 
+import android.content.Context;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+
+
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.minew.beacon.BeaconValueIndex;
-import com.minew.beacon.MinewBeacon;
+import com.minew.beaconset.MinewBeacon;
+import com.inhatc.attendance.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
 public class BeaconListAdapter extends RecyclerView.Adapter<com.inhatc.attendance.BeaconListAdapter.MyViewHolder> {
 
-    private List<MinewBeacon> mMinewBeacons = new ArrayList<>();
+    private List<MinewBeacon> mMinewBeacons;
+
+    public interface OnItemClickLitener {
+        void onItemClick(View view, int position);
+
+        void onItemLongClick(View view, int position);
+    }
+
+    private OnItemClickLitener mOnItemClickLitener;
+
+    public void setOnItemClickLitener(OnItemClickLitener mOnItemClickLitener) {
+        this.mOnItemClickLitener = mOnItemClickLitener;
+    }
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = View.inflate(parent.getContext(), R.layout.main_item, null);
+
+
         return new MyViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(MyViewHolder holder, int position) {
+    public void onBindViewHolder(final MyViewHolder holder, int position) {
         holder.setDataAndUi(mMinewBeacons.get(position));
+
+        // 如果设置了回调，则设置点击事件
+        if (mOnItemClickLitener != null) {
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int pos = holder.getLayoutPosition();
+                    mOnItemClickLitener.onItemClick(holder.itemView, pos);
+                }
+            });
+
+            holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    int pos = holder.getLayoutPosition();
+                    mOnItemClickLitener.onItemLongClick(holder.itemView, pos);
+                    return false;
+                }
+            });
+        }
     }
 
     @Override
@@ -40,69 +78,70 @@ public class BeaconListAdapter extends RecyclerView.Adapter<com.inhatc.attendanc
 
     public void setData(List<MinewBeacon> minewBeacons) {
         this.mMinewBeacons = minewBeacons;
-
-//        notifyItemRangeChanged(0,minewBeacons.size());
         notifyDataSetChanged();
-
     }
 
-    public void setItems(List<MinewBeacon> newItems) {
-//        validateItems(newItems);
-
-
-        int startPosition = 0;
-        int preSize = 0;
-        if (this.mMinewBeacons != null) {
-            preSize = this.mMinewBeacons.size();
-
-        }
-        if (preSize > 0) {
-            this.mMinewBeacons.clear();
-            notifyItemRangeRemoved(startPosition, preSize);
-        }
-        this.mMinewBeacons.addAll(newItems);
-        notifyItemRangeChanged(startPosition, newItems.size());
+    public MinewBeacon getData(int position) {
+        return mMinewBeacons.get(position);
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
         private MinewBeacon mMinewBeacon;
         private final TextView mDevice_name;
+        private final TextView mDevice_uuid;
+        private final TextView mDevice_other;
+        private final TextView mConnectable;
+        private final TextView mdevice_status;
+
+
 
 
         public MyViewHolder(View itemView) {
             super(itemView);
             mDevice_name = (TextView) itemView.findViewById(R.id.device_name);
+            mDevice_uuid = (TextView) itemView.findViewById(R.id.device_uuid);
+            mDevice_other = (TextView) itemView.findViewById(R.id.device_other);
+            mConnectable = (TextView) itemView.findViewById(R.id.device_connectable);
+            mdevice_status = (TextView) itemView.findViewById(R.id.device_status);
+
         }
 
+
+
         public void setDataAndUi(MinewBeacon minewBeacon) {
+
+
+
             mMinewBeacon = minewBeacon;
-            mDevice_name.setText(mMinewBeacon.getBeaconValue(BeaconValueIndex.MinewBeaconValueIndex_Name).getStringValue());
-            String battery = mMinewBeacon.getBeaconValue(BeaconValueIndex.MinewBeaconValueIndex_BatteryLevel).getStringValue();
-            int batt = Integer.parseInt(battery);
-            if (batt > 100) {
-                batt = 100;
-            }
-
-            String format = String.format("Major:%s Minor:%s Rssi:%s Battery:%s",
-                    mMinewBeacon.getBeaconValue(BeaconValueIndex.MinewBeaconValueIndex_Major).getStringValue(),
-                    mMinewBeacon.getBeaconValue(BeaconValueIndex.MinewBeaconValueIndex_Minor).getStringValue(),
-                    mMinewBeacon.getBeaconValue(BeaconValueIndex.MinewBeaconValueIndex_RSSI).getStringValue(),
-                    batt + "");
-
-
-            if (mMinewBeacon.getBeaconValue(BeaconValueIndex.MinewBeaconValueIndex_Humidity).getFloatValue() == 0 &&
-                    mMinewBeacon.getBeaconValue(BeaconValueIndex.MinewBeaconValueIndex_Temperature).getFloatValue() == 0) {
-//                mDevice_temphumi.setVisibility(View.GONE);
+            mDevice_name.setText(mMinewBeacon.getName());
+            mDevice_uuid.setText("UUID:" + mMinewBeacon.getUuid());
+            if (mMinewBeacon.isConnectable()) {
+                mConnectable.setText("CONN: YES");
             } else {
-//                mDevice_temphumi.setVisibility(View.VISIBLE);
-                String temphumi = String.format("Temperature:%s ℃   Humidity:%s ",
-                        mMinewBeacon.getBeaconValue(BeaconValueIndex.MinewBeaconValueIndex_Temperature).getFloatValue() + "",
-                        mMinewBeacon.getBeaconValue(BeaconValueIndex.MinewBeaconValueIndex_Humidity).getFloatValue() + "");
-
-//                mDevice_temphumi.setText(temphumi + "%");
+                mConnectable.setText("CONN: NO");
             }
+            String format = String.format("Major:%s Minor:%s Rssi:%s Battery:%s",
+                    mMinewBeacon.getMajor(),
+                    mMinewBeacon.getMinor(),
+                    mMinewBeacon.getRssi(),
+                    mMinewBeacon.getBattery());
+            mDevice_other.setText(format);
+
+            int getRssi = Integer.parseInt(String.valueOf(mMinewBeacon.getRssi()));
+            String rssiStatus = "";
+
+            if(getRssi < -50) {
+                rssiStatus = "신호 약함";
+            }
+            else{
+                rssiStatus = "양호";
+            }
+
+            mdevice_status.setText(rssiStatus);
 
         }
     }
+
+
 }

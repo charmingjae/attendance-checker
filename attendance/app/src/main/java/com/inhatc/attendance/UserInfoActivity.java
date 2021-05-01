@@ -99,6 +99,8 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
     private final int PERMISSION_COARSE_LOCATION = 122;
     // End
 
+    String rssiValue = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -242,16 +244,25 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
             }
         }else if(view == btnTestAttendance){
             try{
-                String getUserName = studentNum.getText().toString();
-                SimpleDateFormat format1 = new SimpleDateFormat ( "MM-dd HH:mm:ss");
-                Date time = new Date();
-                String time1 = format1.format(time);
 
-                if(getUserName.equals("professor")){
-                    writeNewUser(getUserName,getUserName,"O", time1, "professor");
+                // 1. RSSI 값 검사하기
+                // 2. RSSI 값이 설정한 것 보다 낮으면 튕기기
+
+                if(Integer.parseInt(rssiValue) < -60){
+                    Toast.makeText(this, "신호 세기가 약합니다.", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    writeNewUser(getUserName,getUserName,"O", time1, "student");
+                    String getUserName = studentNum.getText().toString();
+                    SimpleDateFormat format1 = new SimpleDateFormat ( "MM-dd HH:mm:ss");
+                    Date time = new Date();
+                    String time1 = format1.format(time);
+
+                    if(getUserName.equals("professor")){
+                        writeNewUser(getUserName,getUserName,"O", time1, "professor");
+                    }
+                    else{
+                        writeNewUser(getUserName,getUserName,"O", time1, "student");
+                    }
                 }
 
             }catch(Exception e){
@@ -320,7 +331,9 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
 
                 mAdapter.setData(beacons);
                 Log.i("DATA1 ", mAdapter.getData(0).getName());
-                studentNum.setText(String.valueOf(mAdapter.getData(0).getRssi()));
+//                studentNum.setText(String.valueOf(mAdapter.getData(0).getRssi()));
+                rssiValue = String.valueOf(mAdapter.getData(0).getRssi());
+                Log.i("Rssi Value ", rssiValue);
 
             }
 

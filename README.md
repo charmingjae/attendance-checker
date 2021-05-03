@@ -18,6 +18,7 @@ Android ( SDK Version : 28 )
 ```
 
 Database : 
+> ⚠️ Need [google-services.json](https://firebase.google.com/docs/android/setup?hl=ko)
 ```
 Firebase
 ```

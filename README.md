@@ -4,9 +4,9 @@
 <br/>
 
 ## 🤝 Team : " 볶음밥은 인하각 "
-👨‍🚀 (C)[차민재](github.com/charmingjae)  
-👨‍🚀 [김응빈](github.com/eungbin)  
-👨‍🚀 [박규민](github.com/mareepark)  
+👨‍🚀 (C)[차민재](https://github.com/charmingjae)  
+👨‍🚀 [김응빈](https://github.com/eungbin)  
+👨‍🚀 [박규민](https://github.com/mareepark)  
 
 
 

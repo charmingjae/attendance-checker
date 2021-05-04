@@ -14,6 +14,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -26,38 +28,51 @@ import java.util.HashMap;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener{
 
-    EditText stuNo, stuPassword, pwConfirm;
+    EditText userEmail, userPassword, pwConfirm, userName, userPhone;
     Button doRegister;
 
     ProgressDialog progressDialog;
     FirebaseAuth firebaseAuth;
+
+    private DatabaseReference mDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        stuNo =(EditText) findViewById(R.id.edtStuNo);
-        stuPassword = (EditText)findViewById(R.id.edtPassword);
+        userEmail =(EditText) findViewById(R.id.edtUserId);
+        userPassword = (EditText)findViewById(R.id.edtPassword);
         pwConfirm = (EditText)findViewById(R.id.edtPasswordConfirm);
+        userName = (EditText)findViewById(R.id.edtUserName);
+        userPhone = (EditText)findViewById(R.id.edtUserPhone);
 
         doRegister = (Button)findViewById(R.id.btnDoRegister);
 
         firebaseAuth = FirebaseAuth.getInstance();
 
         doRegister.setOnClickListener(this);
+
+        mDatabase = FirebaseDatabase.getInstance().getReference();
     }
 
     private void doRegister(){
-        String email = stuNo.getText().toString().trim();
-        String pwd = stuPassword.getText().toString().trim();
+        String email = userEmail.getText().toString().trim();
+        String pwd = userPassword.getText().toString().trim();
         String strPasswordConfirm = pwConfirm.getText().toString().trim();
+        String strUserName = userName.getText().toString().trim();
+        String strUserPhone = userPhone.getText().toString().trim();
 
         if(pwd.equals(strPasswordConfirm)) {
 
-            Log.v("RegisterActivity", email);
-            Log.v("RegisterActivity", pwd);
-            Log.v("RegisterActivity", strPasswordConfirm);
+            Customer customer = new Customer(email, strUserName, strUserPhone);
+
+            Log.v("RegisterActivity email", email);
+            Log.v("RegisterActivity pwd", pwd);
+            Log.v("RegisterActivity confi", strPasswordConfirm);
+            Log.v("RegisterActivity usern", strUserName);
+            Log.v("RegisterActivity phone", strUserPhone);
+
 
             //email과 password가 제대로 입력되어 있다면 계속 진행된다.
 
@@ -65,15 +80,32 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             progressDialog.setMessage("등록중입니다. 기다려 주세요...");
             progressDialog.show();
 
-
+            // Auth에 등록하기
             firebaseAuth.createUserWithEmailAndPassword(email, pwd)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful()){
-                        Toast.makeText(RegisterActivity.this, "회원가입 완료", Toast.LENGTH_SHORT).show();
-                        finish();
-                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        mDatabase.child("consumers").child(strUserName).setValue(customer)
+                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void aVoid) {
+                                        // Write was successful!
+                                        Toast.makeText(RegisterActivity.this, "회원가입 완료", Toast.LENGTH_SHORT).show();
+                                        progressDialog.dismiss();
+                                        finish();
+                                        return;
+//                                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                                    }
+                                })
+                                .addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        // Write failed
+                                        Toast.makeText(RegisterActivity.this, "저장을 실패했습니다.", Toast.LENGTH_SHORT).show();
+                                        progressDialog.dismiss();
+                                    }
+                                });
                     }else{
                         Toast.makeText(RegisterActivity.this, "Error", Toast.LENGTH_SHORT).show();
                     }

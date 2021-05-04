@@ -3,7 +3,7 @@
 
 <br/>
 
-## 🤝 Team : " 볶음밥은 인하각 "
+## 🤝 Team : " 볶음밥은 인하각 "  
 👨‍🚀 (C)[차민재](https://github.com/charmingjae)  
 👨‍🚀 [김응빈](https://github.com/eungbin)  
 👨‍🚀 [박규민](https://github.com/mareepark)  

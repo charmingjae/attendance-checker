@@ -15,15 +15,15 @@
         android:textColor="@color/black"
         android:textStyle="bold"
         android:textSize="60dp"
-        android:layout_marginTop="100dp"/>
+        android:layout_marginTop="90dp"/>
 
     <EditText
-        android:id="@+id/edtStuNo"
-        android:hint="학번"
+        android:id="@+id/edtUserId"
+        android:hint="이메일"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         android:backgroundTint="@color/black"
         android:textCursorDrawable="@color/black"/>
     <EditText
@@ -32,7 +32,7 @@
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:backgroundTint="@color/black"
         android:textCursorDrawable="@color/black"/>
     <EditText
@@ -41,7 +41,25 @@
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/black"
+        android:textCursorDrawable="@color/black"/>
+    <EditText
+        android:id="@+id/edtUserName"
+        android:hint="이름"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/black"
+        android:textCursorDrawable="@color/black"/>
+    <EditText
+        android:id="@+id/edtUserPhone"
+        android:hint="휴대전화 ( - 없이 입력하세요 )"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
         android:backgroundTint="@color/black"
         android:textCursorDrawable="@color/black"/>
     <Button

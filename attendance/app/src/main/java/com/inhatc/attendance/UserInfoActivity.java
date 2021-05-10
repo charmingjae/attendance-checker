@@ -156,6 +156,7 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
         else{
             User user = new User(userNumber, userAttendance, userAttendTime, userPosition);
 
+            // 방문 등록 시 Firebase로 데이터가 저장되는 부분
             mDatabase.child("users").child(userId).setValue(user)
                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
@@ -332,6 +333,9 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
                 mAdapter.setData(beacons);
                 Log.i("DATA1 ", mAdapter.getData(0).getName());
 //                studentNum.setText(String.valueOf(mAdapter.getData(0).getRssi()));
+                // 비콘의 신호 세기를 가져오는 부분
+                // getData(index) : 비콘이 여러개일 경우 인덱스로 특정 비콘의 정보를 가져온다
+                // getRssi() : 비콘의 라이브러리로 rssi 값을 가져옴
                 rssiValue = String.valueOf(mAdapter.getData(0).getRssi());
                 Log.i("Rssi Value ", rssiValue);
 

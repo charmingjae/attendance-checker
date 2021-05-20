@@ -19,7 +19,7 @@
 
     <EditText
         android:id="@+id/edtLoginNUM"
-        android:hint="학번"
+        android:hint="아이디"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_gravity="center"

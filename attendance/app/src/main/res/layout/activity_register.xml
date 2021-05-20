@@ -19,7 +19,7 @@
 
     <EditText
         android:id="@+id/edtUserId"
-        android:hint="이메일"
+        android:hint="휴대전화 ( - 를 제외하고 입혁하세요 )"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
@@ -53,15 +53,7 @@
         android:layout_marginTop="20dp"
         android:backgroundTint="@color/black"
         android:textCursorDrawable="@color/black"/>
-    <EditText
-        android:id="@+id/edtUserPhone"
-        android:hint="휴대전화 ( - 없이 입력하세요 )"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="@color/black"
-        android:textCursorDrawable="@color/black"/>
+
     <Button
         android:id="@+id/btnDoRegister"
         android:layout_width="300dp"

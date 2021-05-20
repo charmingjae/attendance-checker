@@ -45,7 +45,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         userPassword = (EditText)findViewById(R.id.edtPassword);
         pwConfirm = (EditText)findViewById(R.id.edtPasswordConfirm);
         userName = (EditText)findViewById(R.id.edtUserName);
-        userPhone = (EditText)findViewById(R.id.edtUserPhone);
 
         doRegister = (Button)findViewById(R.id.btnDoRegister);
 
@@ -57,21 +56,20 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void doRegister(){
-        String email = userEmail.getText().toString().trim();
+//        String email = userEmail.getText().toString().trim();
+        String email = userEmail.getText().toString().concat("@itc.ac.kr").trim();
         String pwd = userPassword.getText().toString().trim();
         String strPasswordConfirm = pwConfirm.getText().toString().trim();
         String strUserName = userName.getText().toString().trim();
-        String strUserPhone = userPhone.getText().toString().trim();
 
         if(pwd.equals(strPasswordConfirm)) {
 
-            Customer customer = new Customer(email, strUserName, strUserPhone);
+            Customer customer = new Customer(email, strUserName);
 
             Log.v("RegisterActivity email", email);
             Log.v("RegisterActivity pwd", pwd);
             Log.v("RegisterActivity confi", strPasswordConfirm);
             Log.v("RegisterActivity usern", strUserName);
-            Log.v("RegisterActivity phone", strUserPhone);
 
 
             //email과 password가 제대로 입력되어 있다면 계속 진행된다.
@@ -107,7 +105,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                                     }
                                 });
                     }else{
-                        Toast.makeText(RegisterActivity.this, "Error", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegisterActivity.this, "회원가입 실패", Toast.LENGTH_SHORT).show();
                     }
                     progressDialog.dismiss();
                 }

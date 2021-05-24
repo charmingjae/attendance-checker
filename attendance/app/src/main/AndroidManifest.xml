@@ -24,12 +24,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+<!--        Activity-->
         <activity android:name=".LoginActivity"></activity>
         <activity android:name=".RegisterActivity"></activity>
         <activity android:name=".UserInfoActivity"></activity>
         <activity android:name=".RssiActivity"></activity>
 
         <activity android:name=".DetilActivity"></activity>
+        <activity android:name=".SelectBusActivity"/>
 
 <!--        Fixing point-->
         <service android:name=".ConnectService" />

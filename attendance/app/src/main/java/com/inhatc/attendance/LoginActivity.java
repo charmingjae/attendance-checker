@@ -46,7 +46,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             // 이미 로그인 되었다면 이 액티비티를 종료함
             finish();
             // 그리고 UserInfo 액티비티를 연다.
-            startActivity(new Intent(getApplicationContext(), UserInfoActivity.class));
+//            startActivity(new Intent(getApplicationContext(), UserInfoActivity.class));
+            // 일단 바로 레이아웃으로 가게 만듬
+            startActivity(new Intent(getApplicationContext(), SelectBusActivity.class));
         }
     }
 

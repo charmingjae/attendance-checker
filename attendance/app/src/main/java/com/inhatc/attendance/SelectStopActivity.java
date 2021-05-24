@@ -2,26 +2,17 @@ package com.inhatc.attendance;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class SelectBusActivity extends AppCompatActivity {
+public class SelectStopActivity extends AppCompatActivity {
 
     // Variable
     ArrayList<BusData> busList;
@@ -33,7 +24,7 @@ public class SelectBusActivity extends AppCompatActivity {
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_select_bus);
+        setContentView(R.layout.activity_select_stop);
 
         this.getBusList();
 
@@ -48,7 +39,7 @@ public class SelectBusActivity extends AppCompatActivity {
                 // 버스 번호, 출발지 정보를 다음 인텐트로 넘기기
                 // 지금은 단순히 다음 인텐트로 넘어가게 했음
 
-                Intent intent = new Intent(getApplicationContext(), SelectStopActivity.class);
+                Intent intent = new Intent(getApplicationContext(), ReservationActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -59,10 +50,10 @@ public class SelectBusActivity extends AppCompatActivity {
     public void getBusList(){
         busList = new ArrayList<BusData>();
         // Test Data
-        busList.add(new BusData("511",""));
-        busList.add(new BusData("1540",""));
-        busList.add(new BusData("6111",""));
-        busList.add(new BusData("514",""));
+        busList.add(new BusData("주안역 환승 정류장",""));
+        busList.add(new BusData("SK SKY VIEW",""));
+        busList.add(new BusData("학산 소극장",""));
+        busList.add(new BusData("정석항공고등학교",""));
 //        myAdapter.notifyDataSetChanged();
 
 

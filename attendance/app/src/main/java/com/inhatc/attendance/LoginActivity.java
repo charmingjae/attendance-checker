@@ -48,7 +48,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             // 그리고 UserInfo 액티비티를 연다.
 //            startActivity(new Intent(getApplicationContext(), UserInfoActivity.class));
             // 일단 바로 레이아웃으로 가게 만듬
-            startActivity(new Intent(getApplicationContext(), SelectBusActivity.class));
+            startActivity(new Intent(getApplicationContext(), BeaconDetectActivity.class));
         }
     }
 

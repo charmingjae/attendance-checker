@@ -33,6 +33,7 @@
 
         <activity android:name=".DetilActivity"></activity>
         <activity android:name=".SelectBusActivity"/>
+        <activity android:name=".BeaconDetectActivity"/>
 
 <!--        Fixing point-->
         <service android:name=".ConnectService" />

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorMainColor"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="250dp"
+        android:text="정류장 찾는중..."
+        android:textColor="@color/white"
+        android:textSize="50dp"/>
+    <Button
+        android:layout_width="300dp"
+        android:layout_marginTop="50dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:text="다시 검색하기"
+        android:textColor="@color/black"
+        android:layout_gravity="center"/>
+
+
+</LinearLayout>

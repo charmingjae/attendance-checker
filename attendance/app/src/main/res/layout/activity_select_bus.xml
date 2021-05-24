@@ -15,6 +15,7 @@
         android:gravity="center"
         android:text="버스 선택"/>
     <TextView
+        android:id="@+id/txtRideStop"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"

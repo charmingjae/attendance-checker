@@ -24,6 +24,7 @@ public class BeaconDetectActivity extends AppCompatActivity {
             @Override
             public void run() {
                 Intent intent = new Intent(getApplicationContext(), SelectBusActivity.class);
+                intent.putExtra("rideStation", "주안역");
                 startActivity(intent);
             }
         }, 4000);

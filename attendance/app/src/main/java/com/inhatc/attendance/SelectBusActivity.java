@@ -8,6 +8,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +20,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 
 public class SelectBusActivity extends AppCompatActivity {
@@ -27,6 +30,7 @@ public class SelectBusActivity extends AppCompatActivity {
     ArrayList<BusData> busList;
     ListView busListView;
     MyAdapter myAdapter;
+    TextView txtRideStop;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +38,10 @@ public class SelectBusActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_bus);
+
+        txtRideStop = (TextView)findViewById(R.id.txtRideStop);
+        String rideStation = getIntent().getStringExtra("rideStation");
+        txtRideStop.setText(rideStation);
 
         this.getBusList();
 
@@ -48,7 +56,11 @@ public class SelectBusActivity extends AppCompatActivity {
                 // 버스 번호, 출발지 정보를 다음 인텐트로 넘기기
                 // 지금은 단순히 다음 인텐트로 넘어가게 했음
 
+
+
                 Intent intent = new Intent(getApplicationContext(), SelectStopActivity.class);
+                intent.putExtra("busNum", myAdapter.getItem(position).getBusNumber());
+                intent.putExtra("rideStation", rideStation);
                 startActivity(intent);
                 finish();
             }
@@ -63,32 +75,5 @@ public class SelectBusActivity extends AppCompatActivity {
         busList.add(new BusData("1540",""));
         busList.add(new BusData("6111",""));
         busList.add(new BusData("514",""));
-//        myAdapter.notifyDataSetChanged();
-
-
-        // * Samplecode how to insert bus data into busList
-//        DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
-//
-//        Query query = reference.child("bus");
-//        busList = new ArrayList<BusData>();
-//        query.addListenerForSingleValueEvent(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                if(snapshot.exists()){
-//                    for(DataSnapshot issue : snapshot.getChildren()){
-//                        String name = issue.child("name").getValue().toString();
-//                        Log.i("RETURN VALUE NAME : ", name);
-//                        busList.add(new BusData(name,""));
-//                    }
-//                }
-//                // 됐다고 알림
-//                myAdapter.notifyDataSetChanged();
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//
-//            }
-//        });
     }
 }

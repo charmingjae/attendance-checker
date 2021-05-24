@@ -7,6 +7,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,6 +19,7 @@ public class SelectStopActivity extends AppCompatActivity {
     ArrayList<BusData> busList;
     ListView busListView;
     MyAdapter myAdapter;
+    TextView txtBusNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +27,13 @@ public class SelectStopActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_stop);
+
+        // get Components
+        txtBusNumber = (TextView)findViewById(R.id.txtBusNumber);
+        String busNumber = getIntent().getStringExtra("busNum");
+        String rideStation = getIntent().getStringExtra("rideStation");
+        txtBusNumber.setText(busNumber);
+
 
         this.getBusList();
 
@@ -40,6 +49,9 @@ public class SelectStopActivity extends AppCompatActivity {
                 // 지금은 단순히 다음 인텐트로 넘어가게 했음
 
                 Intent intent = new Intent(getApplicationContext(), ReservationActivity.class);
+                intent.putExtra("busNum", busNumber);
+                intent.putExtra("rideStation", rideStation);
+                intent.putExtra("stopStation", myAdapter.getItem(position).getBusNumber());
                 startActivity(intent);
                 finish();
             }

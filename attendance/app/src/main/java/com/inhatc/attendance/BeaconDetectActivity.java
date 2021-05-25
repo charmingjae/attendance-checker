@@ -133,29 +133,40 @@ public class BeaconDetectActivity extends AppCompatActivity {
             public void onRangeBeacons(List<MinewBeacon> beacons) {
                 Collections.sort(beacons, comp);
 
-                mAdapter.setData(beacons);
-                Log.i("DATA1 ", mAdapter.getData(0).getName());
+                try {
+                    mAdapter.setData(beacons);
+                    Log.i("DATA1 ", mAdapter.getData(0).getName());
 //                studentNum.setText(String.valueOf(mAdapter.getData(0).getRssi()));
-                // 비콘의 신호 세기를 가져오는 부분
-                // getData(index) : 비콘이 여러개일 경우 인덱스로 특정 비콘의 정보를 가져온다
-                // getRssi() : 비콘의 라이브러리로 rssi 값을 가져옴
-                rssiValue = String.valueOf(mAdapter.getData(0).getRssi());
-                uuidValue = String.valueOf(mAdapter.getData(0).getUuid());
-                Log.i("Rssi Value ", rssiValue);
-                Log.i("UUID Value ", uuidValue);
+                    // 비콘의 신호 세기를 가져오는 부분
+                    // getData(index) : 비콘이 여러개일 경우 인덱스로 특정 비콘의 정보를 가져온다
+                    // getRssi() : 비콘의 라이브러리로 rssi 값을 가져옴
+                    rssiValue = String.valueOf(mAdapter.getData(0).getRssi());
+                    uuidValue = String.valueOf(mAdapter.getData(0).getUuid());
+                    Log.i("Rssi Value ", rssiValue);
+                    Log.i("UUID Value ", uuidValue);
+                } catch(Exception e) {
+                    Log.e("Range Exception : ", "잡힌거 없음");
+                }
 
             }
 
             @Override
             public void onAppearBeacons(List<MinewBeacon> beacons) {
-                Log.i("DATA2 ", mAdapter.getData(0).getName());
+                try {
+                    Log.i("DATA2 ", mAdapter.getData(0).getName());
+                } catch (Exception e) {
+                    Log.e("Appear Exception : ", "잡힌거 없음");
+                }
 
             }
 
             @Override
             public void onDisappearBeacons(List<MinewBeacon> beacons) {
-
-                Log.i("DATA3 ", mAdapter.getData(0).getName());
+                try {
+                    Log.i("DATA3 ", mAdapter.getData(0).getName());
+                } catch (Exception e) {
+                    Log.e("Disappear Exception : ", "잡힌거 없음");
+                }
 
             }
         });
@@ -180,7 +191,7 @@ public class BeaconDetectActivity extends AppCompatActivity {
                         startActivity(intent);
                         mpDialog.dismiss();
                     }
-                }, 2000);
+                }, 1000);
 
 //                MinewBeaconConnection minewBeaconConnection = new MinewBeaconConnection(BeaconDetectActivity.this, minewBeacon);
 //                minewBeaconConnection.setMinewBeaconConnectionListener(minewBeaconConnectionListener);
@@ -189,8 +200,6 @@ public class BeaconDetectActivity extends AppCompatActivity {
 
             @Override
             public void onItemLongClick(View view, int position) {
-
-
                 Log.i("DATA ", mAdapter.getData(position).getName());
             }
         });

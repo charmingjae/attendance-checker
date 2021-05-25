@@ -42,6 +42,9 @@
         <activity android:name="com.inhatc.attendance.DetilActivity" />
         <activity android:name="com.inhatc.attendance.SelectBusActivity" />
         <activity android:name="com.inhatc.attendance.BeaconDetectActivity" />
+        <activity android:name="com.inhatc.attendance.ReservationActivity" />
+        <activity android:name="com.inhatc.attendance.ReservationResultActivity" />
+        <activity android:name="com.inhatc.attendance.SelectStopActivity" />
 
         <!-- Fixing point -->
         <service android:name="com.inhatc.attendance.ConnectService" />

@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:2:1-48:12
-INJECTED from /Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:2:1-48:12
-INJECTED from /Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:2:1-48:12
-INJECTED from /Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:2:1-48:12
+ADDED from /Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:2:1-51:12
+INJECTED from /Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:2:1-51:12
+INJECTED from /Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:2:1-51:12
+INJECTED from /Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:2:1-51:12
 MERGED from [com.google.android.material:material:1.3.0] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9c690320e80a4839b6727fe52ecf762c/material-1.3.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/ee75bc57c7e13e1aad1ec45da63f6c94/jetified-viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/6e90b1eb0ec5f9c706ac7f1d288163f2/recyclerview-1.1.0/AndroidManifest.xml:17:1-24:12
@@ -56,20 +56,20 @@ MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/eungbinkim/.gra
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/3695bafeb82c3948f93e72803c89c9bc/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/71622a1e1d582d7a224de1982be555a5/core-runtime-2.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/cc5ec88546b4d1d9a0d12d08d43a6bfb/jetified-annotation-experimental-1.0.0/AndroidManifest.xml:17:1-24:12
-INJECTED from /Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:2:1-48:12
-INJECTED from /Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:2:1-48:12
-INJECTED from /Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:2:1-48:12
+INJECTED from /Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:2:1-51:12
+INJECTED from /Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:2:1-51:12
+INJECTED from /Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:2:1-51:12
 	package
 		ADDED from /Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:3:5-36
 		INJECTED from /Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/main/AndroidManifest.xml
-		ADDED from /Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:2:1-48:12
+		ADDED from /Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:2:1-51:12
 		INJECTED from /Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/main/AndroidManifest.xml
-		ADDED from /Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:2:1-48:12
+		ADDED from /Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:2:1-51:12
 		INJECTED from /Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:2:11-69
@@ -106,7 +106,7 @@ ADDED from /Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/ma
 	android:name
 		ADDED from /Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:11:22-71
 application
-ADDED from /Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:13:5-46:19
+ADDED from /Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:13:5-49:19
 MERGED from [com.google.android.material:material:1.3.0] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9c690320e80a4839b6727fe52ecf762c/material-1.3.0/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.3.0] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9c690320e80a4839b6727fe52ecf762c/material-1.3.0/AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/8f1c30315aa2dc9bdcaaaf06c373f1f8/constraintlayout-2.0.4/AndroidManifest.xml:9:5-20
@@ -187,20 +187,32 @@ activity#com.inhatc.attendance.BeaconDetectActivity
 ADDED from /Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:36:9-57
 	android:name
 		ADDED from /Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:36:19-55
+activity#com.inhatc.attendance.ReservationActivity
+ADDED from /Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:37:9-56
+	android:name
+		ADDED from /Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:37:19-54
+activity#com.inhatc.attendance.ReservationResultActivity
+ADDED from /Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:38:9-62
+	android:name
+		ADDED from /Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:38:19-60
+activity#com.inhatc.attendance.SelectStopActivity
+ADDED from /Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:39:9-55
+	android:name
+		ADDED from /Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:39:19-53
 service#com.inhatc.attendance.ConnectService
-ADDED from /Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:39:9-51
+ADDED from /Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:42:9-51
 	android:name
-		ADDED from /Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:39:18-48
+		ADDED from /Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:42:18-48
 receiver#com.inhatc.attendance.BluetoothChangedReceiver
-ADDED from /Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:41:9-45:20
+ADDED from /Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:44:9-48:20
 	android:name
-		ADDED from /Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:41:19-59
+		ADDED from /Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:44:19-59
 intent-filter#action:name:android.bluetooth.adapter.action.STATE_CHANGED
-ADDED from /Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:42:13-44:29
+ADDED from /Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:45:13-47:29
 action#android.bluetooth.adapter.action.STATE_CHANGED
-ADDED from /Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:43:17-89
+ADDED from /Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:46:17-89
 	android:name
-		ADDED from /Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:43:25-86
+		ADDED from /Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:46:25-86
 uses-sdk
 INJECTED from /Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/main/AndroidManifest.xml

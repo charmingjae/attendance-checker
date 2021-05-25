@@ -33,4 +33,10 @@ public class ReservationResultActivity extends AppCompatActivity {
 
 
     }
+
+    @Override
+    public void onBackPressed() {
+        BeaconDetectActivity.beaconStartScan();
+        super.onBackPressed();
+    }
 }

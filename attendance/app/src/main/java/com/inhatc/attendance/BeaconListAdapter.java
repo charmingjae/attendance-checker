@@ -82,7 +82,12 @@ public class BeaconListAdapter extends RecyclerView.Adapter<com.inhatc.attendanc
     }
 
     public MinewBeacon getData(int position) {
-        return mMinewBeacons.get(position);
+        try {
+            return mMinewBeacons.get(position);
+        } catch (Exception e) {
+            Log.e("Exception : ", String.valueOf(e));
+            return null;
+        }
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {

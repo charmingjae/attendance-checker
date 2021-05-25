@@ -45,6 +45,12 @@ public class ReservationActivity extends AppCompatActivity implements View.OnCli
 
     }
 
+    @Override
+    public void onBackPressed() {
+        BeaconDetectActivity.beaconStartScan();
+        super.onBackPressed();
+    }
+
     private void doReservation(String busNumber_param, String rideStation_param, String stopStation_param){
         Intent intent = new Intent(ReservationActivity.this, ReservationResultActivity.class);
         intent.putExtra("busNum", busNumber_param);

@@ -68,6 +68,12 @@ public class SelectBusActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        BeaconDetectActivity.beaconStartScan();
+        super.onBackPressed();
+    }
+
     public void getBusList(){
         busList = new ArrayList<BusData>();
         // Test Data

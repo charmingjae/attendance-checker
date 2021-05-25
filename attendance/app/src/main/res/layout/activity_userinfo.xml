@@ -42,6 +42,26 @@
         android:visibility="visible"
         />
 
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="79dp"
+        android:id="@+id/beaconGroup">
+
+        <RadioButton
+            android:id="@+id/radioButton1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1번비콘"
+            android:tag="test" />
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2번비콘"
+            android:tag="test2" />
+    </RadioGroup>
+
     <Button
         android:id="@+id/btnTestAttendance"
         android:layout_width="300dp"

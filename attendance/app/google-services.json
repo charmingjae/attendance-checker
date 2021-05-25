@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "38180281934",
+    "project_id": "beacon-205db",
+    "storage_bucket": "beacon-205db.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:38180281934:android:81965e45e981658aafad1f",
+        "android_client_info": {
+          "package_name": "com.inhatc.attendance"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "38180281934-bpgpq8if3tpi6qcl2pk7cv5r9d9n7el2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAib2jX3PEDu7gM204sf7snniyi-vuXg-g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "38180281934-bpgpq8if3tpi6qcl2pk7cv5r9d9n7el2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

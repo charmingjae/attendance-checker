@@ -8,6 +8,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -82,6 +84,7 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
     Button btnTestAttendance;
     Button btnGoAdminMenu;
     ProgressDialog progressDialog;
+    RadioGroup beaconGroup;
 
     FirebaseAuth firebaseAuth;
     String strStuNo;
@@ -100,6 +103,9 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
     // End
 
     String rssiValue = "";
+    String uuidValue = "";
+
+    String next_id = "E2C56DB5-DFFB-48D2-B060-D0F5A71096E0";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -115,6 +121,8 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
         btnDoLogout.setOnClickListener(this);
         btnTestAttendance.setOnClickListener(this);
         btnGoAdminMenu.setOnClickListener(this);
+
+        beaconGroup = (RadioGroup)findViewById(R.id.beaconGroup);
 
         firebaseAuth = FirebaseAuth.getInstance();
 
@@ -273,6 +281,10 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
         }else if(view == btnGoAdminMenu){
             startActivity(new Intent(getApplicationContext(), RssiActivity.class));
             return;
+        } else if(view == beaconGroup) {
+            int id = beaconGroup.getCheckedRadioButtonId();
+            RadioButton rb = (RadioButton) findViewById(id);
+            Log.i("selected : ", "test");
         }
     }
 
@@ -337,13 +349,19 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
                 // getData(index) : 비콘이 여러개일 경우 인덱스로 특정 비콘의 정보를 가져온다
                 // getRssi() : 비콘의 라이브러리로 rssi 값을 가져옴
                 rssiValue = String.valueOf(mAdapter.getData(0).getRssi());
+                uuidValue = String.valueOf(mAdapter.getData(0).getUuid());
                 Log.i("Rssi Value ", rssiValue);
+                Log.i("UUID Value ", uuidValue);
 
             }
 
             @Override
             public void onAppearBeacons(List<MinewBeacon> beacons) {
-
+                for(int i=0; i<beacons.size(); i++) {
+                    if(mAdapter.getData(0).getUuid().equals(next_id)) {
+                        Toast.makeText(UserInfoActivity.this, "다음 목적지 정류장 비콘이 인식되었습니다.", Toast.LENGTH_SHORT).show();
+                    }
+                }
                 Log.i("DATA2 ", mAdapter.getData(0).getName());
 
             }

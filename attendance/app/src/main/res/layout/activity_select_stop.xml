@@ -13,9 +13,9 @@
         android:paddingBottom="10dp"
         android:textSize="30dp"
         android:gravity="center"
-        android:text="버스 선택"/>
+        android:text="내리는 곳 선택"/>
     <TextView
-        android:id="@+id/txtRideStop"
+        android:id="@+id/txtBusNumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
@@ -24,7 +24,7 @@
         android:paddingBottom="5dp"
         android:textSize="20dp"
         android:gravity="center"
-        android:text="인하대 후문"/>
+        android:text="511"/>
     <ListView
         android:id="@+id/lstBus"
         android:layout_width="match_parent"

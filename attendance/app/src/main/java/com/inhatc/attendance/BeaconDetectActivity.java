@@ -278,7 +278,6 @@ public class BeaconDetectActivity extends AppCompatActivity {
 
             @Override
             public void onCancel(DialogInterface arg0) {
-
             }
         });
         mpDialog.setCancelable(true);//

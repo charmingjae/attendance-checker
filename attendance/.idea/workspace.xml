@@ -30,11 +30,9 @@
     <list default="true" id="479c7e95-40bc-41cc-98d0-ede828fa312c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/inhatc/attendance/BeaconDetectActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/inhatc/attendance/BeaconDetectActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/inhatc/attendance/BeaconListAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/inhatc/attendance/BeaconListAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/inhatc/attendance/ReservationActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/inhatc/attendance/ReservationActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/inhatc/attendance/ReservationResultActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/inhatc/attendance/ReservationResultActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/inhatc/attendance/SelectStopActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/inhatc/attendance/SelectStopActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/inhatc/attendance/SelectBusActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/inhatc/attendance/SelectBusActivity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +44,14 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="resourceFile" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -159,29 +165,37 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="488" y="221" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1622031281082">
+      <screen x="58" y="25" width="1382" height="875" />
+    </state>
+    <state x="488" y="221" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/58.25.1382.875@58.25.1382.875" timestamp="1622031281082" />
     <state x="533" y="136" key="#com.intellij.ide.util.MemberChooser" timestamp="1620893460543">
       <screen x="0" y="25" width="1440" height="804" />
     </state>
     <state x="533" y="136" key="#com.intellij.ide.util.MemberChooser/0.25.1440.804@0.25.1440.804" timestamp="1620893460543" />
-    <state width="1336" height="228" key="GridCell.Tab.0.bottom" timestamp="1621927390651">
-      <screen x="62" y="25" width="1378" height="875" />
+    <state width="1336" height="207" key="GridCell.Tab.0.bottom" timestamp="1622016017130">
+      <screen x="58" y="25" width="1382" height="875" />
     </state>
     <state width="1340" height="184" key="GridCell.Tab.0.bottom/56.25.1384.875@56.25.1384.875" timestamp="1621841127560" />
+    <state width="1336" height="207" key="GridCell.Tab.0.bottom/58.25.1382.875@58.25.1382.875" timestamp="1622016017130" />
     <state width="1336" height="228" key="GridCell.Tab.0.bottom/62.25.1378.875@62.25.1378.875" timestamp="1621927390651" />
-    <state width="1336" height="228" key="GridCell.Tab.0.center" timestamp="1621927390651">
-      <screen x="62" y="25" width="1378" height="875" />
+    <state width="1336" height="207" key="GridCell.Tab.0.center" timestamp="1622016017129">
+      <screen x="58" y="25" width="1382" height="875" />
     </state>
     <state width="1340" height="184" key="GridCell.Tab.0.center/56.25.1384.875@56.25.1384.875" timestamp="1621841127559" />
+    <state width="1336" height="207" key="GridCell.Tab.0.center/58.25.1382.875@58.25.1382.875" timestamp="1622016017129" />
     <state width="1336" height="228" key="GridCell.Tab.0.center/62.25.1378.875@62.25.1378.875" timestamp="1621927390651" />
-    <state width="1336" height="228" key="GridCell.Tab.0.left" timestamp="1621927390651">
-      <screen x="62" y="25" width="1378" height="875" />
+    <state width="1336" height="207" key="GridCell.Tab.0.left" timestamp="1622016017128">
+      <screen x="58" y="25" width="1382" height="875" />
     </state>
     <state width="1340" height="184" key="GridCell.Tab.0.left/56.25.1384.875@56.25.1384.875" timestamp="1621841127555" />
+    <state width="1336" height="207" key="GridCell.Tab.0.left/58.25.1382.875@58.25.1382.875" timestamp="1622016017128" />
     <state width="1336" height="228" key="GridCell.Tab.0.left/62.25.1378.875@62.25.1378.875" timestamp="1621927390651" />
-    <state width="1336" height="228" key="GridCell.Tab.0.right" timestamp="1621927390651">
-      <screen x="62" y="25" width="1378" height="875" />
+    <state width="1336" height="207" key="GridCell.Tab.0.right" timestamp="1622016017129">
+      <screen x="58" y="25" width="1382" height="875" />
     </state>
     <state width="1340" height="184" key="GridCell.Tab.0.right/56.25.1384.875@56.25.1384.875" timestamp="1621841127559" />
+    <state width="1336" height="207" key="GridCell.Tab.0.right/58.25.1382.875@58.25.1382.875" timestamp="1622016017129" />
     <state width="1336" height="228" key="GridCell.Tab.0.right/62.25.1378.875@62.25.1378.875" timestamp="1621927390651" />
     <state x="385" y="153" width="670" height="676" key="search.everywhere.popup" timestamp="1620895428570">
       <screen x="0" y="25" width="1440" height="804" />

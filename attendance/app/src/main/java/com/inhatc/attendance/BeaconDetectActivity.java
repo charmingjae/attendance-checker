@@ -46,6 +46,10 @@ public class BeaconDetectActivity extends AppCompatActivity {
     private final int PERMISSION_COARSE_LOCATION = 122;
     // End
 
+    // Thread
+    private NetworkThread thread;
+    // End
+
     String rssiValue = "";
     String uuidValue = "";
 
@@ -62,6 +66,11 @@ public class BeaconDetectActivity extends AppCompatActivity {
         dialogshow();
         mMinewBeaconManager.startService();
         initPermission();
+
+        // Start Thread
+//        thread=new NetworkThread();
+//        thread.start();
+        // End
 
 
         // 일단은 4초 후에 버스 선택 액티비티로 넘어가게 설정
@@ -188,6 +197,8 @@ public class BeaconDetectActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         Intent intent = new Intent(getApplicationContext(), SelectBusActivity.class);
+                        String slicing_uuid = uuidValue.substring(0, 8) + uuidValue.substring(9, 10);
+                        intent.putExtra("busStopId", slicing_uuid);
                         startActivity(intent);
                         mpDialog.dismiss();
                     }

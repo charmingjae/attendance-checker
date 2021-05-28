@@ -20,6 +20,10 @@
         "source": "/Users/eungbinkim/dev/android/beacon_attendance/attendance/app/build/generated/res/pngs/debug/drawable-xhdpi/ic_launcher_background.png"
     },
     {
+        "merged": "/Users/eungbinkim/dev/android/beacon_attendance/attendance/app/build/intermediates/res/merged/debug/xml_network_security_config.xml.flat",
+        "source": "/Users/eungbinkim/dev/android/beacon_attendance/attendance/app/src/main/res/xml/network_security_config.xml"
+    },
+    {
         "merged": "/Users/eungbinkim/dev/android/beacon_attendance/attendance/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_launcher_background.png.flat",
         "source": "/Users/eungbinkim/dev/android/beacon_attendance/attendance/app/build/generated/res/pngs/debug/drawable-mdpi/ic_launcher_background.png"
     },

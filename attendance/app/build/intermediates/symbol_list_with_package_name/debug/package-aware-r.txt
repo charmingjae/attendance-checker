@@ -1666,6 +1666,7 @@ drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
 drawable button01
+drawable clock
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused
@@ -1834,9 +1835,11 @@ id browser_actions_menu_item_icon
 id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
+id btnCancelResv
 id btnDoLogin
 id btnDoLogout
 id btnDoRegister
+id btnDoReservation
 id btnGetRssi
 id btnGoAdminMenu
 id btnGoLogin
@@ -2186,8 +2189,13 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id txtArrive
 id txtAttendTime
 id txtAttendWhether
+id txtBus
+id txtBusNumber
+id txtDepart
+id txtRideStop
 id txtRssi
 id txtView1
 id unchecked
@@ -2272,8 +2280,10 @@ layout activity_login
 layout activity_main
 layout activity_register
 layout activity_reservation
+layout activity_reservation_result
 layout activity_rssi
 layout activity_select_bus
+layout activity_select_stop
 layout activity_userinfo
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
@@ -3375,6 +3385,7 @@ styleable View android_theme android_focusable paddingEnd paddingStart theme
 styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode
 styleable ViewPager2 android_orientation
 styleable ViewStubCompat android_id android_layout android_inflatedId
+xml network_security_config
 xml standalone_badge
 xml standalone_badge_gravity_bottom_end
 xml standalone_badge_gravity_bottom_start

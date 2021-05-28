@@ -22,6 +22,11 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.minew.beaconset.BluetoothState;
 import com.minew.beaconset.ConnectionState;
 import com.minew.beaconset.MinewBeacon;
@@ -46,8 +51,14 @@ public class BeaconDetectActivity extends AppCompatActivity {
     private final int PERMISSION_COARSE_LOCATION = 122;
     // End
 
+    // Thread
+    private NetworkThread thread;
+    // End
+
     String rssiValue = "";
     String uuidValue = "";
+
+    String slicing_uuid = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +73,11 @@ public class BeaconDetectActivity extends AppCompatActivity {
         dialogshow();
         mMinewBeaconManager.startService();
         initPermission();
+
+        // Start Thread
+//        thread=new NetworkThread();
+//        thread.start();
+        // End
 
 
         // 일단은 4초 후에 버스 선택 액티비티로 넘어가게 설정
@@ -133,29 +149,40 @@ public class BeaconDetectActivity extends AppCompatActivity {
             public void onRangeBeacons(List<MinewBeacon> beacons) {
                 Collections.sort(beacons, comp);
 
-                mAdapter.setData(beacons);
-                Log.i("DATA1 ", mAdapter.getData(0).getName());
+                try {
+                    mAdapter.setData(beacons);
+                    Log.i("DATA1 ", mAdapter.getData(0).getName());
 //                studentNum.setText(String.valueOf(mAdapter.getData(0).getRssi()));
-                // 비콘의 신호 세기를 가져오는 부분
-                // getData(index) : 비콘이 여러개일 경우 인덱스로 특정 비콘의 정보를 가져온다
-                // getRssi() : 비콘의 라이브러리로 rssi 값을 가져옴
-                rssiValue = String.valueOf(mAdapter.getData(0).getRssi());
-                uuidValue = String.valueOf(mAdapter.getData(0).getUuid());
-                Log.i("Rssi Value ", rssiValue);
-                Log.i("UUID Value ", uuidValue);
+                    // 비콘의 신호 세기를 가져오는 부분
+                    // getData(index) : 비콘이 여러개일 경우 인덱스로 특정 비콘의 정보를 가져온다
+                    // getRssi() : 비콘의 라이브러리로 rssi 값을 가져옴
+                    rssiValue = String.valueOf(mAdapter.getData(0).getRssi());
+                    uuidValue = String.valueOf(mAdapter.getData(0).getUuid());
+                    Log.i("Rssi Value ", rssiValue);
+                    Log.i("UUID Value ", uuidValue);
+                } catch(Exception e) {
+                    Log.e("Range Exception : ", "잡힌거 없음");
+                }
 
             }
 
             @Override
             public void onAppearBeacons(List<MinewBeacon> beacons) {
-                Log.i("DATA2 ", mAdapter.getData(0).getName());
+                try {
+                    Log.i("DATA2 ", mAdapter.getData(0).getName());
+                } catch (Exception e) {
+                    Log.e("Appear Exception : ", "잡힌거 없음");
+                }
 
             }
 
             @Override
             public void onDisappearBeacons(List<MinewBeacon> beacons) {
-
-                Log.i("DATA3 ", mAdapter.getData(0).getName());
+                try {
+                    Log.i("DATA3 ", mAdapter.getData(0).getName());
+                } catch (Exception e) {
+                    Log.e("Disappear Exception : ", "잡힌거 없음");
+                }
 
             }
         });
@@ -177,10 +204,13 @@ public class BeaconDetectActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         Intent intent = new Intent(getApplicationContext(), SelectBusActivity.class);
+                        slicing_uuid = uuidValue.substring(0, 8) + uuidValue.substring(9, 10);
+                        intent.putExtra("busStopId", slicing_uuid);
+                        intent.putExtra("rideStation", mAdapter.getBStop_name());
                         startActivity(intent);
                         mpDialog.dismiss();
                     }
-                }, 2000);
+                }, 1000);
 
 //                MinewBeaconConnection minewBeaconConnection = new MinewBeaconConnection(BeaconDetectActivity.this, minewBeacon);
 //                minewBeaconConnection.setMinewBeaconConnectionListener(minewBeaconConnectionListener);
@@ -189,8 +219,6 @@ public class BeaconDetectActivity extends AppCompatActivity {
 
             @Override
             public void onItemLongClick(View view, int position) {
-
-
                 Log.i("DATA ", mAdapter.getData(position).getName());
             }
         });

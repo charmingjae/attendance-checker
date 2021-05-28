@@ -72,11 +72,11 @@ public class SelectBusActivity extends AppCompatActivity {
             @Override
             public void run() {
                 mpDialog.dismiss();
-                getBusList();
+//                getBusList();
 
                 // Get ListView
                 busListView = (ListView)findViewById(R.id.lstBus);
-                myAdapter = new MyAdapter(getApplicationContext(), busList);
+                myAdapter = new MyAdapter(getApplicationContext(), NetworkThread.list_busData);
                 busListView.setAdapter(myAdapter);
 
                 busListView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
@@ -87,6 +87,7 @@ public class SelectBusActivity extends AppCompatActivity {
 
                         Intent intent = new Intent(getApplicationContext(), SelectStopActivity.class);
                         intent.putExtra("busNum", myAdapter.getItem(position).getBusNumber());
+                        intent.putExtra("busId", myAdapter.getItem(position).getBusId());
                         intent.putExtra("rideStation", rideStation);
                         startActivity(intent);
                         finish();
@@ -120,7 +121,7 @@ public class SelectBusActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
 //        busList.clear();
-        NetworkThread.list_routeNo.clear();
+        NetworkThread.list_busData.clear();
         BeaconDetectActivity.beaconStartScan();
         super.onBackPressed();
     }
@@ -129,10 +130,10 @@ public class SelectBusActivity extends AppCompatActivity {
         busList = new ArrayList<BusData>();
 
         // Input Bus List
-        for(int i=0; i<NetworkThread.list_routeNo.size(); i++) {
-            busList.add(new BusData(NetworkThread.list_routeNo.get(i), ""));
+        for(int i=0; i<NetworkThread.list_busData.size(); i++) {
+            busList.add(NetworkThread.list_busData.get(i));
         }
-        Log.e("test", String.valueOf(busList));
+        Log.e("busList:", String.valueOf(busList));
     }
 
     protected void dialogshow() {

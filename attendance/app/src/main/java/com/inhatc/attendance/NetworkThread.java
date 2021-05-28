@@ -12,27 +12,31 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.HashMap;
 
+// 해당 정류장 경유하는 버스 목록 API Thread
 public class NetworkThread extends Thread{
 
-    public static ArrayList<String> list_routeNo = new ArrayList<String>();
+    public static ArrayList<BusData> list_busData = new ArrayList<>();
 
     @Override
     public void run() {
         boolean isRouteNo = false;
         String routeNo = "";
-        String busStopId = SelectBusActivity.busStopId;
 
-        Log.e("please...", busStopId);
+        boolean isRouteId = false;
+        String routeId = "";
+
+        String busStopId = SelectBusActivity.busStopId;
 
         try {
             StringBuilder urlBuilder = new StringBuilder("http://apis.data.go.kr/6280000/busStationService/getBusStationViaRouteList");
-            Log.e("MY_TEST","urlBuilder");
             urlBuilder.append("?" + URLEncoder.encode("serviceKey", "UTF-8") + "=o2ZQsjx6tHMpSiMv4%2F%2Bs19g4MSzBBranfpGsX1GM8D5dIKCHug1AsFBLSi7W%2FygXlomkyXKv8WD4W7uFGSDNAA%3D%3D");
             urlBuilder.append("&" + URLEncoder.encode("pageNo", "UTF-8") + "=" + URLEncoder.encode("1", "UTF-8"));
             urlBuilder.append("&" + URLEncoder.encode("numOfRows", "UTF-8") + "=" + URLEncoder.encode("10", "UTF-8"));
             urlBuilder.append("&" + URLEncoder.encode("bstopId", "UTF-8") + "=" + URLEncoder.encode(busStopId, "UTF-8"));
             URL url = new URL(urlBuilder.toString());
+
 
             XmlPullParserFactory parserCreator = XmlPullParserFactory.newInstance();
             XmlPullParser parser = parserCreator.newPullParser();
@@ -48,23 +52,27 @@ public class NetworkThread extends Thread{
                         if(parser.getName().equals("ROUTENO")){ //title 만나면 내용을 받을수 있게 하자
                             isRouteNo = true;
                         }
+                        if(parser.getName().equals("ROUTEID")){ //title 만나면 내용을 받을수 있게 하자
+                            isRouteId = true;
+                        }
                         break;
 
                     case XmlPullParser.TEXT://parser가 내용에 접근했을때
-                        if(isRouteNo){ //isTitle이 true일 때 태그의 내용을 저장.
+                        if(isRouteNo){ //isRouteNo true일 때 태그의 내용을 저장.
                             routeNo = parser.getText();
-                            list_routeNo.add(routeNo);
                             isRouteNo = false;
+                            BusData data = new BusData(routeNo, "0", routeId);
+                            list_busData.add(data);
+                        }
+                        if(isRouteId){ //isRouteNo true일 때 태그의 내용을 저장.
+                            routeId = parser.getText();
+                            isRouteId = false;
                         }
                         break;
                     case XmlPullParser.END_TAG:
                         break;
                 }
                 parserEvent = parser.next();
-            }
-
-            for(int i=0; i<list_routeNo.size(); i++) {
-                Log.e("Bus : ", list_routeNo.get(i));
             }
 
 //            HttpURLConnection conn = (HttpURLConnection) url.openConnection();

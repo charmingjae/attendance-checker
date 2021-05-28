@@ -22,6 +22,11 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.minew.beaconset.BluetoothState;
 import com.minew.beaconset.ConnectionState;
 import com.minew.beaconset.MinewBeacon;
@@ -52,6 +57,8 @@ public class BeaconDetectActivity extends AppCompatActivity {
 
     String rssiValue = "";
     String uuidValue = "";
+
+    String slicing_uuid = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -197,8 +204,9 @@ public class BeaconDetectActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         Intent intent = new Intent(getApplicationContext(), SelectBusActivity.class);
-                        String slicing_uuid = uuidValue.substring(0, 8) + uuidValue.substring(9, 10);
+                        slicing_uuid = uuidValue.substring(0, 8) + uuidValue.substring(9, 10);
                         intent.putExtra("busStopId", slicing_uuid);
+                        intent.putExtra("rideStation", mAdapter.getBStop_name());
                         startActivity(intent);
                         mpDialog.dismiss();
                     }

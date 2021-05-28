@@ -47,6 +47,8 @@ public class ReservationActivity extends AppCompatActivity implements View.OnCli
 
     @Override
     public void onBackPressed() {
+        NetworkThread.list_busData.clear();
+        busNodeThread.list_route.clear();
         BeaconDetectActivity.beaconStartScan();
         super.onBackPressed();
     }

@@ -10,12 +10,20 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 
-
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 import com.minew.beaconset.MinewBeacon;
 import com.inhatc.attendance.R;
 
+import java.util.HashMap;
 import java.util.List;
 
 
@@ -23,11 +31,17 @@ public class BeaconListAdapter extends RecyclerView.Adapter<com.inhatc.attendanc
 
     private List<MinewBeacon> mMinewBeacons;
 
+    boolean isFinded = false;
+
+    private String bStop_name;
+
     public interface OnItemClickLitener {
         void onItemClick(View view, int position);
 
         void onItemLongClick(View view, int position);
     }
+
+    public String getBStop_name() { return this.bStop_name; }
 
     private OnItemClickLitener mOnItemClickLitener;
 
@@ -100,8 +114,6 @@ public class BeaconListAdapter extends RecyclerView.Adapter<com.inhatc.attendanc
         private final TextView mdevice_status;
 
 
-
-
         public MyViewHolder(View itemView) {
             super(itemView);
             mDevice_name = (TextView) itemView.findViewById(R.id.device_name);
@@ -112,14 +124,25 @@ public class BeaconListAdapter extends RecyclerView.Adapter<com.inhatc.attendanc
 
         }
 
-
-
         public void setDataAndUi(MinewBeacon minewBeacon) {
-
-
-
             mMinewBeacon = minewBeacon;
-            mDevice_name.setText(mMinewBeacon.getName());
+            isFinded = false;
+
+            // 정류장 리스트에서 uuid가 같은 값 찾은 뒤 해당 정류장 이름으로 setText
+            for(int i=0; i<MainActivity.bStop_list.size(); i++) {
+                if(MainActivity.bStop_list.get(i).getBStop_Uuid().equals(mMinewBeacon.getUuid())) {
+                    bStop_name = MainActivity.bStop_list.get(i).getBStop_Name();
+                    mDevice_name.setText(bStop_name);
+                    isFinded = true;
+                    break;
+                }
+            }
+
+            if(isFinded) {
+
+            } else {
+                mDevice_name.setText(mMinewBeacon.getName());
+            }
             mDevice_uuid.setText("UUID:" + mMinewBeacon.getUuid());
             if (mMinewBeacon.isConnectable()) {
                 mConnectable.setText("CONN: YES");
@@ -147,6 +170,5 @@ public class BeaconListAdapter extends RecyclerView.Adapter<com.inhatc.attendanc
 
         }
     }
-
 
 }

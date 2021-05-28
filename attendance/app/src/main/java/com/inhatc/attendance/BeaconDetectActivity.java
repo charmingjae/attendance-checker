@@ -80,15 +80,15 @@ public class BeaconDetectActivity extends AppCompatActivity {
         // End
 
 
-        // 일단은 4초 후에 버스 선택 액티비티로 넘어가게 설정
-        // 시나리오대로라면 비콘 탐지 후 그 비콘 아이디에 맞는 버스를 출력해야 된다.
+//         일단은 4초 후에 버스 선택 액티비티로 넘어가게 설정
+//         시나리오대로라면 비콘 탐지 후 그 비콘 아이디에 맞는 버스를 출력해야 된다.
 //        new Handler().postDelayed(new Runnable() {
 //            @Override
 //            public void run() {
 //                Intent intent = new Intent(getApplicationContext(), SelectBusActivity.class);
 //                startActivity(intent);
 //            }
-//        }, 4000);
+//        }, 10000);
     }
 
     public static void beaconStartScan() {

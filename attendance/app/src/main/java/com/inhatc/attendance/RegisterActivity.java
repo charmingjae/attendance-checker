@@ -64,7 +64,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
         if(pwd.equals(strPasswordConfirm)) {
 
-            Customer customer = new Customer(email, strUserName);
+            Customer customer = new Customer(email, strUserName, "customer");
 
             Log.v("RegisterActivity email", email);
             Log.v("RegisterActivity pwd", pwd);

@@ -38,6 +38,8 @@
         <activity android:name=".ReservationActivity"/>
         <activity android:name=".ReservationResultActivity"/>
         <activity android:name=".SelectStopActivity"/>
+        <activity android:name=".DriverActivity"/>
+        <activity android:name=".ReservationStatusActivity"/>
 
 <!--        Fixing point-->
         <service android:name=".ConnectService" />

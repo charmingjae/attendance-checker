@@ -12,14 +12,22 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import org.w3c.dom.Text;
+
+import java.util.HashMap;
 
 public class ReservationActivity extends AppCompatActivity implements View.OnClickListener{
 
     // Variable
     TextView txtBus, txtRideStation, txtStopStation;
     Button btnDoReservation;
-    String busNumber, rideStation, stopStation;
+    String busNumber, rideStation, stopStation, userPhone;
+    private FirebaseAuth mAuth;
+    DatabaseReference mDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +62,22 @@ public class ReservationActivity extends AppCompatActivity implements View.OnCli
     }
 
     private void doReservation(String busNumber_param, String rideStation_param, String stopStation_param){
+        // 'res' 항목에 예약 정보를 넣은 뒤 인텐트 이동
+        //상세정보로 이동하기 전 데이터베이스의 예약 데이터 저장
+        //보낼 예약 데이터 중 사용자 정보
+        userPhone = mAuth.getCurrentUser().getEmail();
+        userPhone = userPhone.substring(0,11);
+        HashMap result = new HashMap<>();
+        result.put("end", stopStation);
+        result.put("phone", userPhone);
+        result.put("start", rideStation);
+        result.put("status", "wait");
+
+        // firebase 정의
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+        mDatabase.child("res").push().setValue(result);
+
+        // 인텐트 이동
         Intent intent = new Intent(ReservationActivity.this, ReservationResultActivity.class);
         intent.putExtra("busNum", busNumber_param);
         intent.putExtra("rideStation", rideStation_param);

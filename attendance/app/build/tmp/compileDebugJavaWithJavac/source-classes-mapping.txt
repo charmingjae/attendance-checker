@@ -36,13 +36,15 @@ com/inhatc/attendance/ReservationStatusActivity.java
  com.inhatc.attendance.ReservationStatusActivity$3
  com.inhatc.attendance.ReservationStatusActivity$4
  com.inhatc.attendance.ReservationStatusActivity$5
-com/inhatc/attendance/MainActivity.java
- com.inhatc.attendance.MainActivity
- com.inhatc.attendance.MainActivity$1
- com.inhatc.attendance.MainActivity$2
- com.inhatc.attendance.MainActivity$3
+com/inhatc/attendance/RegisterActivity.java
+ com.inhatc.attendance.RegisterActivity
+ com.inhatc.attendance.RegisterActivity$1
+ com.inhatc.attendance.RegisterActivity$1$1
+ com.inhatc.attendance.RegisterActivity$1$2
 com/inhatc/attendance/Customer.java
  com.inhatc.attendance.Customer
+com/inhatc/attendance/DriverActivity.java
+ com.inhatc.attendance.DriverActivity
 com/inhatc/attendance/BeaconListAdapter.java
  com.inhatc.attendance.BeaconListAdapter
  com.inhatc.attendance.BeaconListAdapter$1
@@ -119,13 +121,11 @@ com/inhatc/attendance/BeaconDetectActivity.java
  com.inhatc.attendance.BeaconDetectActivity$4$1
  com.inhatc.attendance.BeaconDetectActivity$5
  com.inhatc.attendance.BeaconDetectActivity$6
-com/inhatc/attendance/RegisterActivity.java
- com.inhatc.attendance.RegisterActivity
- com.inhatc.attendance.RegisterActivity$1
- com.inhatc.attendance.RegisterActivity$1$1
- com.inhatc.attendance.RegisterActivity$1$2
-com/inhatc/attendance/DriverActivity.java
- com.inhatc.attendance.DriverActivity
+com/inhatc/attendance/MainActivity.java
+ com.inhatc.attendance.MainActivity
+ com.inhatc.attendance.MainActivity$1
+ com.inhatc.attendance.MainActivity$2
+ com.inhatc.attendance.MainActivity$3
 com/inhatc/attendance/ReservationActivity.java
  com.inhatc.attendance.ReservationActivity
 com/inhatc/attendance/SelectStopActivity.java

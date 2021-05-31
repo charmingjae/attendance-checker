@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/chaminjae/Desktop/minjae/Beacon/attendance/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hdpi-v4/values-hdpi-v4.xml",
+            "outputFile": "/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hdpi-v4/values-hdpi-v4.xml",
             "map": [
                 {
-                    "source": "/Users/chaminjae/.gradle/caches/transforms-2/files-2.1/21e7d3e291bf235fa32924c9c4913e25/appcompat-1.2.0/res/values-hdpi-v4/values-hdpi-v4.xml",
+                    "source": "/Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/21e7d3e291bf235fa32924c9c4913e25/appcompat-1.2.0/res/values-hdpi-v4/values-hdpi-v4.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

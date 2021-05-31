@@ -26,7 +26,7 @@ public class ReservationActivity extends AppCompatActivity implements View.OnCli
     TextView txtBus, txtRideStation, txtStopStation;
     Button btnDoReservation;
     String busNumber, rideStation, stopStation, userPhone;
-    private FirebaseAuth mAuth;
+    FirebaseAuth mAuth;
     DatabaseReference mDatabase;
 
     @Override
@@ -65,7 +65,7 @@ public class ReservationActivity extends AppCompatActivity implements View.OnCli
         // 'res' 항목에 예약 정보를 넣은 뒤 인텐트 이동
         //상세정보로 이동하기 전 데이터베이스의 예약 데이터 저장
         //보낼 예약 데이터 중 사용자 정보
-        userPhone = mAuth.getCurrentUser().getEmail();
+        userPhone = mAuth.getInstance().getCurrentUser().getEmail();
         userPhone = userPhone.substring(0,11);
         HashMap result = new HashMap<>();
         result.put("end", stopStation);

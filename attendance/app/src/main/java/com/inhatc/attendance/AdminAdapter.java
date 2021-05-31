@@ -45,12 +45,15 @@ public class AdminAdapter extends BaseAdapter {
 
         TextView movieName = (TextView)view.findViewById(R.id.movieName);
         TextView grade = (TextView)view.findViewById(R.id.grade);
+        TextView userPhone = (TextView)view.findViewById(R.id.userPhone);
 
         movieName.setText(sample.get(position).getStart());
         if(movieName.getText().toString().equals("9200")){
             movieName.setTextColor(Color.parseColor("#FF0000"));
         }
         grade.setText(sample.get(position).getEnd());
+
+        userPhone.setText(sample.get(position).getPhone());
 
         return view;
     }

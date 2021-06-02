@@ -53,7 +53,7 @@ public class AdminAdapter extends BaseAdapter {
         }
         grade.setText(sample.get(position).getEnd());
 
-        userPhone.setText(sample.get(position).getPhone());
+        userPhone.setText("핸드폰 뒤 4자리 : " + sample.get(position).getPhone().substring(7, 11));
 
         return view;
     }

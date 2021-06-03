@@ -81,7 +81,6 @@ public class ReservationStatusActivity extends AppCompatActivity {
                                 for (int position : reverseSortedPositions) {
                                     //insertStatus(myAdapter_1.getItem(position),"ride");
                                     changeStatus(myAdapter_1.getItem(position),"ride");
-
                                 }
                             }
                         });
@@ -129,6 +128,7 @@ public class ReservationStatusActivity extends AppCompatActivity {
 
     private void changeStatus(SampleData data, String status){
         phone = data.getPhone();
+        Log.e("Log", phone);
         start = data.getStart();
         end = data.getEnd();
 

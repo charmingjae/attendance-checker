@@ -48,6 +48,9 @@ public class MainActivity extends AppCompatActivity {
     // check Reservation Info
     Boolean check_phone;
 
+    // Button Object
+    Button goLogin, goLogout, goRegister;
+
     // Object List
     public static ArrayList<bStopData> bStop_list;
 
@@ -59,8 +62,12 @@ public class MainActivity extends AppCompatActivity {
         check_phone = false;
 
         // 레이아웃에서 객체 연결하기
-        Button goLogin = (Button)findViewById(R.id.btnGoLogin);
-        Button goRegister = (Button)findViewById(R.id.btnGoRegister);
+        goLogin = (Button)findViewById(R.id.btnGoLogin);
+        goLogout = (Button)findViewById(R.id.btnGoLogout);
+        goRegister = (Button)findViewById(R.id.btnGoRegister);
+
+        goLogout.setVisibility(View.GONE);
+        goRegister.setVisibility(View.GONE);
 
         // 파이어베이스 auth object
         firebaseAuth = FirebaseAuth.getInstance();
@@ -68,6 +75,14 @@ public class MainActivity extends AppCompatActivity {
         try {
             userPhone = mAuth.getInstance().getCurrentUser().getEmail();
             userPhone = userPhone.substring(0, 11);
+
+            goLogin.setText("예약하러가기");
+            goLogout.setVisibility(View.VISIBLE);
+            goRegister.setVisibility(View.GONE);
+        } catch(NullPointerException e) {
+            goLogin.setText("로그인");
+            goLogout.setVisibility(View.GONE);
+            goRegister.setVisibility(View.VISIBLE);
         } catch (Exception e) {
             Log.e("Exception", e.toString());
         }
@@ -97,6 +112,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        goLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                firebaseAuth.signOut();
+                Intent intent = getIntent();
+                finish();
                 startActivity(intent);
             }
         });
@@ -156,22 +181,12 @@ public class MainActivity extends AppCompatActivity {
                     phone = slicing_data[0].substring(7, slicing_data[0].lastIndexOf(""));
 
                     if(phone.equals(userPhone)) {
-                        // Data preprocessing
-//                        busNumber = slicing_data[1].replaceAll(" ", "");
-//                        busNumber = slicing_data[1].replaceAll("=", "");
-//                        start = slicing_data[2].replaceAll(" ", "");
-//                        start = slicing_data[2].replaceAll("=", "");
-//                        end = slicing_data[3].replaceAll(" ", "");
-//                        end = slicing_data[3].replaceAll("=", "");
-//
-//                        busNumber = busNumber.replaceAll("busNum", "");
-//                        start = start.replaceAll("start", "");
-//                        end = end.replaceAll("end", "");
                         busNumber = slicing_data[1].substring(8, slicing_data[1].lastIndexOf(""));
                         start = slicing_data[2].substring(7, slicing_data[2].lastIndexOf(""));
                         end = slicing_data[3].substring(5, slicing_data[3].lastIndexOf(""));
 
                         check_phone = true;
+                        goLogin.setText("예약정보확인");
                         break;
                     }
                 }

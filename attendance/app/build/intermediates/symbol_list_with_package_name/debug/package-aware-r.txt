@@ -1843,6 +1843,7 @@ id btnDoReservation
 id btnGetRssi
 id btnGoAdminMenu
 id btnGoLogin
+id btnGoLogout
 id btnGoRegister
 id btnTestAttendance
 id busLinearLayout

@@ -61,6 +61,11 @@ public class ReservationResultActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 removeData();
+
+                NetworkThread.list_busData.clear();
+                busNodeThread.list_route.clear();
+                Intent intent = new Intent(ReservationResultActivity.this, BeaconDetectActivity.class);
+                startActivity(intent);
             }
         });
 

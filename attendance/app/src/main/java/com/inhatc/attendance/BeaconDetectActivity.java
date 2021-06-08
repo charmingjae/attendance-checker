@@ -333,5 +333,13 @@ public class BeaconDetectActivity extends AppCompatActivity {
         super.onDestroy();
     }
 
+    @Override
+    public void onBackPressed() {
+        NetworkThread.list_busData.clear();
+        busNodeThread.list_route.clear();
+        Intent intent = new Intent(BeaconDetectActivity.this, MainActivity.class);
+        startActivity(intent);
+    }
+
 
 }

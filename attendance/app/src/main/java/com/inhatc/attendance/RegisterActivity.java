@@ -28,8 +28,8 @@ import java.util.HashMap;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener{
 
-    EditText userEmail, userPassword, pwConfirm, userName, userPhone;
-    Button doRegister;
+    EditText userEmail, userPassword, pwConfirm, userName, userPhone, edtPhoneValid;
+    Button doRegister, btnPhoneValid, btnChkCode;
 
     ProgressDialog progressDialog;
     FirebaseAuth firebaseAuth;
@@ -45,12 +45,17 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         userPassword = (EditText)findViewById(R.id.edtPassword);
         pwConfirm = (EditText)findViewById(R.id.edtPasswordConfirm);
         userName = (EditText)findViewById(R.id.edtUserName);
+        edtPhoneValid = (EditText)findViewById(R.id.edtPhoneValid);
 
         doRegister = (Button)findViewById(R.id.btnDoRegister);
+        btnPhoneValid = (Button)findViewById(R.id.btnPhoneValid);
+        btnChkCode = (Button)findViewById(R.id.btnChkCode);
 
         firebaseAuth = FirebaseAuth.getInstance();
 
         doRegister.setOnClickListener(this);
+        btnPhoneValid.setOnClickListener(this);
+        btnChkCode.setOnClickListener(this);
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
     }
@@ -117,10 +122,31 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         }
     }
 
+    // 휴대전화 입력 후 버튼 눌렀을 때
+    public void doGetNumber(){
+        return;
+    }
+
+    // 인증번호 입력 후 인증번호 확인용
+    public void doValidCode(){
+        // 비활성화 되어 있는 회원가입 버튼 활성화
+        // if문으로 인증번호가 확인 되었을 때 활성화 시켜야 됨
+        doRegister.setEnabled(true);
+        return;
+    }
+
     @Override
     public void onClick(View view){
         if(view == doRegister){
             doRegister();
+        }
+        else if(view == btnPhoneValid){
+            // 휴대폰 번호 입력 후 인증 번호 발송
+            return;
+        }
+        else{
+            // 인증번호 입력 후 인증번호 확인
+            return;
         }
     }
 }

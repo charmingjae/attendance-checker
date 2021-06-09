@@ -20,15 +20,61 @@
         android:paddingBottom="10dp"
         android:background="@color/colorMainColor"/>
 
-    <EditText
-        android:id="@+id/edtUserId"
-        android:hint="휴대전화 ( - 를 제외하고 입혁하세요 )"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="80dp"
-        android:backgroundTint="@color/black"
-        android:textCursorDrawable="@color/black"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp">
+        <EditText
+            android:id="@+id/edtUserId"
+            android:hint="휴대전화"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="55dp"
+            android:backgroundTint="@color/black"
+            android:textCursorDrawable="@color/black"/>
+        <Button
+            android:id="@+id/btnPhoneValid"
+            android:layout_width="100dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center"
+            android:text="발급 받기"
+            android:textSize="15dp"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/colorMainColor" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/edtPhoneValid"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="55dp"
+            android:backgroundTint="@color/black"
+            android:hint="Code"
+            android:textCursorDrawable="@color/black" />
+
+        <Button
+            android:id="@+id/btnChkCode"
+            android:layout_width="100dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center"
+            android:text="인증 확인"
+            android:textSize="15dp"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/colorMainColor" />
+    </LinearLayout>
+
     <EditText
         android:id="@+id/edtPassword"
         android:hint="비밀번호"
@@ -68,6 +114,7 @@
         android:text="회원가입"
         android:textSize="15dp"
         android:textStyle="bold"
+        android:enabled="false"
         app:backgroundTint="@color/colorMainColor"/>
 
 </LinearLayout>

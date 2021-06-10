@@ -17,13 +17,20 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseException;
+import com.google.firebase.FirebaseTooManyRequestsException;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.PhoneAuthCredential;
+import com.google.firebase.auth.PhoneAuthOptions;
+import com.google.firebase.auth.PhoneAuthProvider;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
+import java.util.concurrent.TimeUnit;
 
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener{
@@ -35,6 +42,12 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     FirebaseAuth firebaseAuth;
 
     private DatabaseReference mDatabase;
+
+    PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks;
+
+    PhoneAuthCredential credential;
+    String smsCode = "";
+    @NonNull String mVerificationId = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -124,6 +137,56 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
     // 휴대전화 입력 후 버튼 눌렀을 때
     public void doGetNumber(){
+        firebaseAuth.setLanguageCode("ko");
+        String phoneNumber = userEmail.getText().toString();
+        // Ex) 01012345678 -> +82 10-1234-5678
+        String converted_number = "+82 " + phoneNumber.substring(1, 3) + "-" + phoneNumber.substring(3, 7) +
+                                    "-" + phoneNumber.substring(7, 11);
+        PhoneAuthOptions options =
+                PhoneAuthOptions.newBuilder(firebaseAuth)
+                        .setPhoneNumber(converted_number)       // Phone number to verify
+                        .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
+                        .setActivity(this)                 // Activity (for callback binding)
+                        .setCallbacks(new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+
+                            @Override
+                            public void onVerificationCompleted(PhoneAuthCredential credential) {
+                                Log.d("Log", "onVerificationCompleted:" + credential);
+
+                                signInWithPhoneAuthCredential(credential);
+                            }
+
+                            @Override
+                            public void onVerificationFailed(FirebaseException e) {
+                                Log.w("Log", "onVerificationFailed", e);
+
+                                if (e instanceof FirebaseAuthInvalidCredentialsException) {
+                                    // Invalid request
+                                    Log.e("Error!!!", "무슨 에러냐 이건?");
+                                    Toast.makeText(RegisterActivity.this, "예기치 못한 오류가 발생하였습니다. 고객센터로 문의주시기 바랍니다.", Toast.LENGTH_SHORT);
+                                } else if (e instanceof FirebaseTooManyRequestsException) {
+                                    // The SMS quota for the project has been exceeded
+                                    Log.e("Error!!!", "요청이 너무 많다는데");
+                                    Toast.makeText(RegisterActivity.this, "요청이 너무 많습니다. 잠시 후 이용해 주세요.", Toast.LENGTH_SHORT);
+                                }
+
+                                // Show a message and update the UI
+                            }
+
+                            @Override
+                            public void onCodeSent(@NonNull String verificationId,
+                                                   @NonNull PhoneAuthProvider.ForceResendingToken token) {
+                                Log.d("Log", "onCodeSent:" + verificationId);
+
+                                // Save verification ID and resending token so we can use them later
+                                mVerificationId = verificationId;
+                                @NonNull PhoneAuthProvider.ForceResendingToken mResendToken = token;
+                            }
+                        }
+)          // OnVerificationStateChangedCallbacks
+                        .build();
+        PhoneAuthProvider.verifyPhoneNumber(options);
+
         return;
     }
 
@@ -131,7 +194,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     public void doValidCode(){
         // 비활성화 되어 있는 회원가입 버튼 활성화
         // if문으로 인증번호가 확인 되었을 때 활성화 시켜야 됨
-        doRegister.setEnabled(true);
+        credential = PhoneAuthProvider.getCredential(mVerificationId, edtPhoneValid.getText().toString());
+        signInWithPhoneAuthCredential(credential);
         return;
     }
 
@@ -141,12 +205,33 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             doRegister();
         }
         else if(view == btnPhoneValid){
-            // 휴대폰 번호 입력 후 인증 번호 발송
+            doGetNumber();
             return;
         }
-        else{
+        else if(view == btnChkCode){
             // 인증번호 입력 후 인증번호 확인
+            Log.e("TEST", "TEST");
+            doValidCode();
             return;
         }
     }
+
+    private void signInWithPhoneAuthCredential(PhoneAuthCredential credential) {
+        firebaseAuth.signInWithCredential(credential)
+                .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                    @Override
+                    public void onSuccess(AuthResult authResult) {
+                        Toast.makeText(RegisterActivity.this, "인증되었습니다.", Toast.LENGTH_SHORT).show();
+                        doRegister.setEnabled(true);
+                        firebaseAuth.signOut();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(RegisterActivity.this, "인증번호를 확인해 주시기 바랍니다..", Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
+
 }

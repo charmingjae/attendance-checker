@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         goRegister = (Button)findViewById(R.id.btnGoRegister);
 
         goLogout.setVisibility(View.GONE);
-        goRegister.setVisibility(View.GONE);
+        goRegister.setVisibility(View.VISIBLE);
 
         // 파이어베이스 auth object
         firebaseAuth = FirebaseAuth.getInstance();
@@ -75,11 +75,13 @@ public class MainActivity extends AppCompatActivity {
         try {
             userPhone = mAuth.getInstance().getCurrentUser().getEmail();
             userPhone = userPhone.substring(0, 11);
+            Log.e("TEST", "처음이야");
 
             goLogin.setText("예약하러가기");
             goLogout.setVisibility(View.VISIBLE);
             goRegister.setVisibility(View.GONE);
         } catch(NullPointerException e) {
+            Log.e("TEST", "Null 걸림");
             goLogin.setText("로그인");
             goLogout.setVisibility(View.GONE);
             goRegister.setVisibility(View.VISIBLE);
@@ -101,8 +103,10 @@ public class MainActivity extends AppCompatActivity {
                     intent.putExtra("busNum", busNumber);
                     startActivity(intent);
                 } else {
+                    Log.e("WHY?", "asd");
                     Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                     startActivity(intent);
+                    Log.e("WHY?", "test");
                 }
             }
         });

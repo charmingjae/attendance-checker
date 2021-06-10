@@ -1836,6 +1836,7 @@ id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
 id btnCancelResv
+id btnChkCode
 id btnDoLogin
 id btnDoLogout
 id btnDoRegister
@@ -1845,6 +1846,7 @@ id btnGoAdminMenu
 id btnGoLogin
 id btnGoLogout
 id btnGoRegister
+id btnPhoneValid
 id btnTestAttendance
 id busLinearLayout
 id busNumber
@@ -1925,6 +1927,7 @@ id edtLoginNUM
 id edtLoginPW
 id edtPassword
 id edtPasswordConfirm
+id edtPhoneValid
 id edtUserId
 id edtUserName
 id elastic

@@ -36,6 +36,22 @@ com/inhatc/attendance/ReservationStatusActivity.java
  com.inhatc.attendance.ReservationStatusActivity$3
  com.inhatc.attendance.ReservationStatusActivity$4
  com.inhatc.attendance.ReservationStatusActivity$5
+com/inhatc/attendance/SampleData.java
+ com.inhatc.attendance.SampleData
+com/inhatc/attendance/Customer.java
+ com.inhatc.attendance.Customer
+com/inhatc/attendance/DriverActivity.java
+ com.inhatc.attendance.DriverActivity
+com/inhatc/attendance/AdminAdapter.java
+ com.inhatc.attendance.AdminAdapter
+com/inhatc/attendance/SwipeDismissListViewTouchListener.java
+ com.inhatc.attendance.SwipeDismissListViewTouchListener
+ com.inhatc.attendance.SwipeDismissListViewTouchListener$1
+ com.inhatc.attendance.SwipeDismissListViewTouchListener$2
+ com.inhatc.attendance.SwipeDismissListViewTouchListener$3
+ com.inhatc.attendance.SwipeDismissListViewTouchListener$4
+ com.inhatc.attendance.SwipeDismissListViewTouchListener$DismissCallbacks
+ com.inhatc.attendance.SwipeDismissListViewTouchListener$PendingDismissData
 com/inhatc/attendance/RssiActivity.java
  com.inhatc.attendance.RssiActivity
  com.inhatc.attendance.RssiActivity$1
@@ -45,25 +61,6 @@ com/inhatc/attendance/RssiActivity.java
  com.inhatc.attendance.RssiActivity$4$1
  com.inhatc.attendance.RssiActivity$5
  com.inhatc.attendance.RssiActivity$6
-com/inhatc/attendance/Customer.java
- com.inhatc.attendance.Customer
-com/inhatc/attendance/DriverActivity.java
- com.inhatc.attendance.DriverActivity
-com/inhatc/attendance/SampleData.java
- com.inhatc.attendance.SampleData
-com/inhatc/attendance/SwipeDismissListViewTouchListener.java
- com.inhatc.attendance.SwipeDismissListViewTouchListener
- com.inhatc.attendance.SwipeDismissListViewTouchListener$1
- com.inhatc.attendance.SwipeDismissListViewTouchListener$2
- com.inhatc.attendance.SwipeDismissListViewTouchListener$3
- com.inhatc.attendance.SwipeDismissListViewTouchListener$4
- com.inhatc.attendance.SwipeDismissListViewTouchListener$DismissCallbacks
- com.inhatc.attendance.SwipeDismissListViewTouchListener$PendingDismissData
-com/inhatc/attendance/SelectStopActivity.java
- com.inhatc.attendance.SelectStopActivity
- com.inhatc.attendance.SelectStopActivity$1
- com.inhatc.attendance.SelectStopActivity$1$1
- com.inhatc.attendance.SelectStopActivity$2
 com/inhatc/attendance/nodeAdapter.java
  com.inhatc.attendance.nodeAdapter
 com/inhatc/attendance/DetilActivity.java
@@ -81,25 +78,29 @@ com/inhatc/attendance/DetilActivity.java
  com.inhatc.attendance.DetilActivity$5
 com/inhatc/attendance/RecycleViewDivider.java
  com.inhatc.attendance.RecycleViewDivider
+com/inhatc/attendance/User.java
+ com.inhatc.attendance.User
+com/inhatc/attendance/BusData.java
+ com.inhatc.attendance.BusData
+com/inhatc/attendance/SelectStopActivity.java
+ com.inhatc.attendance.SelectStopActivity
+ com.inhatc.attendance.SelectStopActivity$1
+ com.inhatc.attendance.SelectStopActivity$1$1
+ com.inhatc.attendance.SelectStopActivity$2
+com/inhatc/attendance/LoginActivity.java
+ com.inhatc.attendance.LoginActivity
+ com.inhatc.attendance.LoginActivity$1
+ com.inhatc.attendance.LoginActivity$2
+com/inhatc/attendance/LoadingActivity.java
+ com.inhatc.attendance.LoadingActivity
+ com.inhatc.attendance.LoadingActivity$1
+ com.inhatc.attendance.LoadingActivity$2
+ com.inhatc.attendance.LoadingActivity$3
 com/inhatc/attendance/ReservationActivity.java
  com.inhatc.attendance.ReservationActivity
  com.inhatc.attendance.ReservationActivity$1
  com.inhatc.attendance.ReservationActivity$2
  com.inhatc.attendance.ReservationActivity$3
-com/inhatc/attendance/BusData.java
- com.inhatc.attendance.BusData
-com/inhatc/attendance/AdminAdapter.java
- com.inhatc.attendance.AdminAdapter
-com/inhatc/attendance/User.java
- com.inhatc.attendance.User
-com/inhatc/attendance/LoginActivity.java
- com.inhatc.attendance.LoginActivity
- com.inhatc.attendance.LoginActivity$1
- com.inhatc.attendance.LoginActivity$2
-com/inhatc/attendance/ReservationResultActivity.java
- com.inhatc.attendance.ReservationResultActivity
- com.inhatc.attendance.ReservationResultActivity$1
- com.inhatc.attendance.ReservationResultActivity$2
 com/inhatc/attendance/BeaconListAdapter.java
  com.inhatc.attendance.BeaconListAdapter
  com.inhatc.attendance.BeaconListAdapter$1
@@ -128,6 +129,10 @@ com/inhatc/attendance/UserInfoActivity.java
  com.inhatc.attendance.UserInfoActivity$7$1
  com.inhatc.attendance.UserInfoActivity$8
  com.inhatc.attendance.UserInfoActivity$9
+com/inhatc/attendance/ReservationResultActivity.java
+ com.inhatc.attendance.ReservationResultActivity
+ com.inhatc.attendance.ReservationResultActivity$1
+ com.inhatc.attendance.ReservationResultActivity$2
 com/inhatc/attendance/MainActivity.java
  com.inhatc.attendance.MainActivity
  com.inhatc.attendance.MainActivity$1

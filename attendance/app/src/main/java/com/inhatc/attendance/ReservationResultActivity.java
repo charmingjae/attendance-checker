@@ -79,6 +79,7 @@ public class ReservationResultActivity extends AppCompatActivity {
 //        BeaconDetectActivity.beaconStartScan();
         Intent intent = new Intent(ReservationResultActivity.this, MainActivity.class);
         startActivity(intent);
+        finish();
     }
 
     private void removeData(){
@@ -95,7 +96,9 @@ public class ReservationResultActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot appleSnapshot: dataSnapshot.getChildren()) {
-                    appleSnapshot.getRef().removeValue();
+                    if(appleSnapshot.child("status").getValue().toString().equals("wait")) {
+                        appleSnapshot.getRef().removeValue();
+                    }
                 }
             }
 

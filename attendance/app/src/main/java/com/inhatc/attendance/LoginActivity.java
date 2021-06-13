@@ -111,7 +111,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         if(task.isSuccessful()) {
                             finish();
                             progressDialog.dismiss();
-                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                            startActivity(new Intent(getApplicationContext(), LoadingActivity.class));
                         } else {
                             progressDialog.dismiss();
                             Toast.makeText(getApplicationContext(), "로그인 실패!", Toast.LENGTH_LONG).show();
@@ -125,6 +125,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         if(view == btnDoLogin) {
             userLogin();
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        NetworkThread.list_busData.clear();
+        busNodeThread.list_route.clear();
+        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+        startActivity(intent);
+//        finish();
     }
 
 }

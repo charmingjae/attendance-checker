@@ -11,38 +11,38 @@
 9-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:5:5-66
+11-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:5:5-67
 11-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:5:22-64
 12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-12-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:6:5-78
+12-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:6:5-79
 12-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:6:22-76
 13    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-13-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:8:5-81
-13-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:8:22-78
+13-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:7:5-81
+13-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:7:22-78
 14    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-14-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:9:5-79
-14-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:9:22-76
+14-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:8:5-79
+14-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:8:22-76
 15    <uses-permission android:name="android.permission.BLUETOOTH" />
-15-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:10:5-68
-15-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:10:22-65
+15-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:9:5-68
+15-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:9:22-65
 16    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-16-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:11:5-74
-16-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:11:22-71
+16-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:10:5-74
+16-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:10:22-71
 17
 18    <application
-18-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:13:5-52:19
+18-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:12:5-47:19
 19        android:name="androidx.multidex.MultiDexApplication"
 20        android:allowBackup="true"
-20-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:14:9-35
+20-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:13:9-35
 21        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 21-->[androidx.core:core:1.3.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9c9e2752fc1aa62cf881477d26d37a8f/core-1.3.1/AndroidManifest.xml:24:18-86
 22        android:debuggable="true"
 23        android:icon="@mipmap/ic_launcher"
-23-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:15:9-43
+23-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:14:9-43
 24        android:label="@string/app_name"
-24-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:16:9-41
+24-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:15:9-41
 25        android:networkSecurityConfig="@xml/network_security_config"
-25-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:20:9-69
+25-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:16:9-69
 26        android:roundIcon="@mipmap/ic_launcher_round"
 26-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:17:9-54
 27        android:supportsRtl="true"
@@ -50,216 +50,215 @@
 28        android:testOnly="true"
 29        android:theme="@style/Theme.Attendance" >
 29-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:19:9-48
-30        <activity android:name="com.inhatc.attendance.MainActivity" >
-30-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:21:9-27:20
-30-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:21:19-47
-31            <intent-filter>
-31-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:22:13-26:29
-32                <action android:name="android.intent.action.MAIN" />
-32-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:23:17-69
-32-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:23:25-66
-33
-34                <category android:name="android.intent.category.LAUNCHER" />
-34-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:25:17-77
-34-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:25:27-74
-35            </intent-filter>
-36        </activity>
-37
-38        <!-- Activity -->
-39        <activity android:name="com.inhatc.attendance.LoginActivity" />
-39-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:30:9-60
-39-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:30:19-48
-40        <activity android:name="com.inhatc.attendance.RegisterActivity" />
-40-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:31:9-63
-40-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:31:19-51
-41        <activity android:name="com.inhatc.attendance.UserInfoActivity" />
-41-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:32:9-63
-41-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:32:19-51
-42        <activity android:name="com.inhatc.attendance.RssiActivity" />
-42-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:33:9-59
-42-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:33:19-47
-43        <activity android:name="com.inhatc.attendance.DetilActivity" />
-43-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:35:9-60
-43-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:35:19-48
-44        <activity android:name="com.inhatc.attendance.SelectBusActivity" />
-44-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:36:9-54
-44-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:36:19-52
-45        <activity android:name="com.inhatc.attendance.BeaconDetectActivity" />
-45-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:37:9-57
-45-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:37:19-55
-46        <activity android:name="com.inhatc.attendance.ReservationActivity" />
-46-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:38:9-56
-46-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:38:19-54
-47        <activity android:name="com.inhatc.attendance.ReservationResultActivity" />
-47-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:39:9-62
-47-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:39:19-60
-48        <activity android:name="com.inhatc.attendance.SelectStopActivity" />
-48-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:40:9-55
-48-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:40:19-53
-49        <activity android:name="com.inhatc.attendance.DriverActivity" />
-49-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:41:9-51
-49-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:41:19-49
-50        <activity android:name="com.inhatc.attendance.ReservationStatusActivity" />
-50-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:42:9-62
-50-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:42:19-60
+30        <activity android:name="com.inhatc.attendance.MainActivity" />
+30-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:20:9-59
+30-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:20:19-47
+31        <activity android:name="com.inhatc.attendance.LoadingActivity" >
+31-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:21:9-27:20
+31-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:21:19-50
+32            <intent-filter>
+32-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:22:13-26:29
+33                <action android:name="android.intent.action.MAIN" />
+33-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:23:17-69
+33-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:23:25-66
+34
+35                <category android:name="android.intent.category.LAUNCHER" />
+35-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:25:17-77
+35-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:25:27-74
+36            </intent-filter>
+37        </activity> <!-- Activity -->
+38        <activity android:name="com.inhatc.attendance.LoginActivity" />
+38-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:28:9-51
+38-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:28:19-48
+39        <activity android:name="com.inhatc.attendance.RegisterActivity" />
+39-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:29:9-54
+39-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:29:19-51
+40        <activity android:name="com.inhatc.attendance.UserInfoActivity" />
+40-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:30:9-54
+40-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:30:19-51
+41        <activity android:name="com.inhatc.attendance.RssiActivity" />
+41-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:31:9-50
+41-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:31:19-47
+42        <activity android:name="com.inhatc.attendance.DetilActivity" />
+42-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:32:9-51
+42-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:32:19-48
+43        <activity android:name="com.inhatc.attendance.SelectBusActivity" />
+43-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:33:9-55
+43-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:33:19-52
+44        <activity android:name="com.inhatc.attendance.BeaconDetectActivity" />
+44-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:34:9-58
+44-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:34:19-55
+45        <activity android:name="com.inhatc.attendance.ReservationActivity" />
+45-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:35:9-57
+45-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:35:19-54
+46        <activity android:name="com.inhatc.attendance.ReservationResultActivity" />
+46-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:36:9-63
+46-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:36:19-60
+47        <activity android:name="com.inhatc.attendance.SelectStopActivity" />
+47-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:37:9-56
+47-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:37:19-53
+48        <activity android:name="com.inhatc.attendance.DriverActivity" />
+48-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:38:9-52
+48-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:38:19-49
+49        <activity android:name="com.inhatc.attendance.ReservationStatusActivity" /> <!-- Fixing point -->
+49-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:39:9-63
+49-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:39:19-60
+50        <service android:name="com.inhatc.attendance.ConnectService" />
+50-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:40:9-51
+50-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:40:18-48
 51
-52        <!-- Fixing point -->
-53        <service android:name="com.inhatc.attendance.ConnectService" />
-53-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:45:9-51
-53-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:45:18-48
-54
-55        <receiver android:name="com.inhatc.attendance.BluetoothChangedReceiver" >
-55-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:47:9-51:20
-55-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:47:19-59
-56            <intent-filter>
-56-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:48:13-50:29
-57                <action android:name="android.bluetooth.adapter.action.STATE_CHANGED" />
-57-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:49:17-89
-57-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:49:25-86
-58            </intent-filter>
-59        </receiver>
-60
-61        <service
-61-->[com.google.firebase:firebase-database:19.7.0] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/632d943c509fc84eb75ec356219cb9d4/jetified-firebase-database-19.7.0/AndroidManifest.xml:29:9-35:19
-62            android:name="com.google.firebase.components.ComponentDiscoveryService"
-62-->[com.google.firebase:firebase-database:19.7.0] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/632d943c509fc84eb75ec356219cb9d4/jetified-firebase-database-19.7.0/AndroidManifest.xml:30:13-84
-63            android:directBootAware="true"
-63-->[com.google.firebase:firebase-common:20.0.0] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/f354ba22926d1553a14fe516ab59086e/jetified-firebase-common-20.0.0/AndroidManifest.xml:35:13-43
-64            android:exported="false" >
-64-->[com.google.firebase:firebase-database:19.7.0] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/632d943c509fc84eb75ec356219cb9d4/jetified-firebase-database-19.7.0/AndroidManifest.xml:31:13-37
+52        <receiver android:name="com.inhatc.attendance.BluetoothChangedReceiver" >
+52-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:42:9-46:20
+52-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:42:19-59
+53            <intent-filter>
+53-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:43:13-45:29
+54                <action android:name="android.bluetooth.adapter.action.STATE_CHANGED" />
+54-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:44:17-89
+54-->/Users/eungbinkim/dev/android/test2/beacon_attendance/attendance/app/src/main/AndroidManifest.xml:44:25-86
+55            </intent-filter>
+56        </receiver>
+57
+58        <service
+58-->[com.google.firebase:firebase-database:19.7.0] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/632d943c509fc84eb75ec356219cb9d4/jetified-firebase-database-19.7.0/AndroidManifest.xml:29:9-35:19
+59            android:name="com.google.firebase.components.ComponentDiscoveryService"
+59-->[com.google.firebase:firebase-database:19.7.0] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/632d943c509fc84eb75ec356219cb9d4/jetified-firebase-database-19.7.0/AndroidManifest.xml:30:13-84
+60            android:directBootAware="true"
+60-->[com.google.firebase:firebase-common:20.0.0] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/f354ba22926d1553a14fe516ab59086e/jetified-firebase-common-20.0.0/AndroidManifest.xml:35:13-43
+61            android:exported="false" >
+61-->[com.google.firebase:firebase-database:19.7.0] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/632d943c509fc84eb75ec356219cb9d4/jetified-firebase-database-19.7.0/AndroidManifest.xml:31:13-37
+62            <meta-data
+62-->[com.google.firebase:firebase-database:19.7.0] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/632d943c509fc84eb75ec356219cb9d4/jetified-firebase-database-19.7.0/AndroidManifest.xml:32:13-34:85
+63                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
+63-->[com.google.firebase:firebase-database:19.7.0] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/632d943c509fc84eb75ec356219cb9d4/jetified-firebase-database-19.7.0/AndroidManifest.xml:33:17-109
+64                android:value="com.google.firebase.components.ComponentRegistrar" />
+64-->[com.google.firebase:firebase-database:19.7.0] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/632d943c509fc84eb75ec356219cb9d4/jetified-firebase-database-19.7.0/AndroidManifest.xml:34:17-82
 65            <meta-data
-65-->[com.google.firebase:firebase-database:19.7.0] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/632d943c509fc84eb75ec356219cb9d4/jetified-firebase-database-19.7.0/AndroidManifest.xml:32:13-34:85
-66                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
-66-->[com.google.firebase:firebase-database:19.7.0] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/632d943c509fc84eb75ec356219cb9d4/jetified-firebase-database-19.7.0/AndroidManifest.xml:33:17-109
+65-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:77:13-79:85
+66                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+66-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:78:17-109
 67                android:value="com.google.firebase.components.ComponentRegistrar" />
-67-->[com.google.firebase:firebase-database:19.7.0] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/632d943c509fc84eb75ec356219cb9d4/jetified-firebase-database-19.7.0/AndroidManifest.xml:34:17-82
-68            <meta-data
-68-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:77:13-79:85
-69                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
-69-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:78:17-109
-70                android:value="com.google.firebase.components.ComponentRegistrar" />
-70-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:79:17-82
-71        </service>
-72
-73        <activity
-73-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:27:9-44:20
-74            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
-74-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:28:13-80
-75            android:excludeFromRecents="true"
-75-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:29:13-46
-76            android:exported="true"
-76-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:30:13-36
-77            android:launchMode="singleTask"
-77-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:31:13-44
-78            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-78-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:32:13-72
-79            <intent-filter>
-79-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:33:13-43:29
-80                <action android:name="android.intent.action.VIEW" />
-80-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:34:17-69
-80-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:34:25-66
+67-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:79:17-82
+68        </service>
+69
+70        <activity
+70-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:27:9-44:20
+71            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+71-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:28:13-80
+72            android:excludeFromRecents="true"
+72-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:29:13-46
+73            android:exported="true"
+73-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:30:13-36
+74            android:launchMode="singleTask"
+74-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:31:13-44
+75            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+75-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:32:13-72
+76            <intent-filter>
+76-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:33:13-43:29
+77                <action android:name="android.intent.action.VIEW" />
+77-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:34:17-69
+77-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:34:25-66
+78
+79                <category android:name="android.intent.category.DEFAULT" />
+79-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:36:17-76
+79-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:36:27-73
+80                <category android:name="android.intent.category.BROWSABLE" />
+80-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:37:17-78
+80-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:37:27-75
 81
-82                <category android:name="android.intent.category.DEFAULT" />
-82-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:36:17-76
-82-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:36:27-73
-83                <category android:name="android.intent.category.BROWSABLE" />
-83-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:37:17-78
-83-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:37:27-75
-84
-85                <data
-85-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:39:17-42:51
-86                    android:host="firebase.auth"
-86-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:40:21-49
-87                    android:path="/"
-87-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:41:21-37
-88                    android:scheme="genericidp" />
-88-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:42:21-48
-89            </intent-filter>
-90        </activity>
-91        <activity
-91-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:45:9-62:20
-92            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
-92-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:46:13-79
-93            android:excludeFromRecents="true"
-93-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:47:13-46
-94            android:exported="true"
-94-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:48:13-36
-95            android:launchMode="singleTask"
-95-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:49:13-44
-96            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-96-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:50:13-72
-97            <intent-filter>
-97-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:51:13-61:29
-98                <action android:name="android.intent.action.VIEW" />
-98-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:34:17-69
-98-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:34:25-66
+82                <data
+82-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:39:17-42:51
+83                    android:host="firebase.auth"
+83-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:40:21-49
+84                    android:path="/"
+84-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:41:21-37
+85                    android:scheme="genericidp" />
+85-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:42:21-48
+86            </intent-filter>
+87        </activity>
+88        <activity
+88-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:45:9-62:20
+89            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+89-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:46:13-79
+90            android:excludeFromRecents="true"
+90-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:47:13-46
+91            android:exported="true"
+91-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:48:13-36
+92            android:launchMode="singleTask"
+92-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:49:13-44
+93            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+93-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:50:13-72
+94            <intent-filter>
+94-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:51:13-61:29
+95                <action android:name="android.intent.action.VIEW" />
+95-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:34:17-69
+95-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:34:25-66
+96
+97                <category android:name="android.intent.category.DEFAULT" />
+97-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:36:17-76
+97-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:36:27-73
+98                <category android:name="android.intent.category.BROWSABLE" />
+98-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:37:17-78
+98-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:37:27-75
 99
-100                <category android:name="android.intent.category.DEFAULT" />
-100-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:36:17-76
-100-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:36:27-73
-101                <category android:name="android.intent.category.BROWSABLE" />
-101-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:37:17-78
-101-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:37:27-75
-102
-103                <data
-103-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:39:17-42:51
-104                    android:host="firebase.auth"
-104-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:40:21-49
-105                    android:path="/"
-105-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:41:21-37
-106                    android:scheme="recaptcha" />
-106-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:42:21-48
-107            </intent-filter>
-108        </activity>
-109
-110        <service
-110-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:64:9-73:19
-111            android:name="com.google.firebase.auth.api.fallback.service.FirebaseAuthFallbackService"
-111-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:65:13-101
-112            android:enabled="true"
-112-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:66:13-35
-113            android:exported="false" >
-113-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:67:13-37
-114            <intent-filter>
-114-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:68:13-72:29
-115                <action android:name="com.google.firebase.auth.api.gms.service.START" />
-115-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:69:17-89
-115-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:69:25-86
-116
-117                <category android:name="android.intent.category.DEFAULT" />
-117-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:36:17-76
-117-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:36:27-73
-118            </intent-filter>
-119        </service>
-120
-121        <activity
-121-->[com.google.android.gms:play-services-base:17.1.0] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/39252603d6a7bfd7aa76ab7dd2db0911/jetified-play-services-base-17.1.0/AndroidManifest.xml:23:9-26:75
-122            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-122-->[com.google.android.gms:play-services-base:17.1.0] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/39252603d6a7bfd7aa76ab7dd2db0911/jetified-play-services-base-17.1.0/AndroidManifest.xml:24:13-79
-123            android:exported="false"
-123-->[com.google.android.gms:play-services-base:17.1.0] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/39252603d6a7bfd7aa76ab7dd2db0911/jetified-play-services-base-17.1.0/AndroidManifest.xml:25:13-37
-124            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-124-->[com.google.android.gms:play-services-base:17.1.0] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/39252603d6a7bfd7aa76ab7dd2db0911/jetified-play-services-base-17.1.0/AndroidManifest.xml:26:13-72
-125
-126        <provider
-126-->[com.google.firebase:firebase-common:20.0.0] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/f354ba22926d1553a14fe516ab59086e/jetified-firebase-common-20.0.0/AndroidManifest.xml:26:9-31:39
-127            android:name="com.google.firebase.provider.FirebaseInitProvider"
-127-->[com.google.firebase:firebase-common:20.0.0] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/f354ba22926d1553a14fe516ab59086e/jetified-firebase-common-20.0.0/AndroidManifest.xml:27:13-77
-128            android:authorities="com.inhatc.attendance.firebaseinitprovider"
-128-->[com.google.firebase:firebase-common:20.0.0] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/f354ba22926d1553a14fe516ab59086e/jetified-firebase-common-20.0.0/AndroidManifest.xml:28:13-72
-129            android:directBootAware="true"
-129-->[com.google.firebase:firebase-common:20.0.0] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/f354ba22926d1553a14fe516ab59086e/jetified-firebase-common-20.0.0/AndroidManifest.xml:29:13-43
-130            android:exported="false"
-130-->[com.google.firebase:firebase-common:20.0.0] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/f354ba22926d1553a14fe516ab59086e/jetified-firebase-common-20.0.0/AndroidManifest.xml:30:13-37
-131            android:initOrder="100" />
-131-->[com.google.firebase:firebase-common:20.0.0] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/f354ba22926d1553a14fe516ab59086e/jetified-firebase-common-20.0.0/AndroidManifest.xml:31:13-36
-132
-133        <meta-data
-133-->[com.google.android.gms:play-services-basement:17.1.0] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/c9d0df3f0988b93d5a5fa39c4fb06ee0/jetified-play-services-basement-17.1.0/AndroidManifest.xml:23:9-25:69
-134            android:name="com.google.android.gms.version"
-134-->[com.google.android.gms:play-services-basement:17.1.0] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/c9d0df3f0988b93d5a5fa39c4fb06ee0/jetified-play-services-basement-17.1.0/AndroidManifest.xml:24:13-58
-135            android:value="@integer/google_play_services_version" />
-135-->[com.google.android.gms:play-services-basement:17.1.0] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/c9d0df3f0988b93d5a5fa39c4fb06ee0/jetified-play-services-basement-17.1.0/AndroidManifest.xml:25:13-66
-136    </application>
-137
-138</manifest>
+100                <data
+100-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:39:17-42:51
+101                    android:host="firebase.auth"
+101-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:40:21-49
+102                    android:path="/"
+102-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:41:21-37
+103                    android:scheme="recaptcha" />
+103-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:42:21-48
+104            </intent-filter>
+105        </activity>
+106
+107        <service
+107-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:64:9-73:19
+108            android:name="com.google.firebase.auth.api.fallback.service.FirebaseAuthFallbackService"
+108-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:65:13-101
+109            android:enabled="true"
+109-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:66:13-35
+110            android:exported="false" >
+110-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:67:13-37
+111            <intent-filter>
+111-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:68:13-72:29
+112                <action android:name="com.google.firebase.auth.api.gms.service.START" />
+112-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:69:17-89
+112-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:69:25-86
+113
+114                <category android:name="android.intent.category.DEFAULT" />
+114-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:36:17-76
+114-->[com.google.firebase:firebase-auth:21.0.1] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/9cde3886a69473429606f1ba9072a0bf/jetified-firebase-auth-21.0.1/AndroidManifest.xml:36:27-73
+115            </intent-filter>
+116        </service>
+117
+118        <activity
+118-->[com.google.android.gms:play-services-base:17.1.0] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/39252603d6a7bfd7aa76ab7dd2db0911/jetified-play-services-base-17.1.0/AndroidManifest.xml:23:9-26:75
+119            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+119-->[com.google.android.gms:play-services-base:17.1.0] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/39252603d6a7bfd7aa76ab7dd2db0911/jetified-play-services-base-17.1.0/AndroidManifest.xml:24:13-79
+120            android:exported="false"
+120-->[com.google.android.gms:play-services-base:17.1.0] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/39252603d6a7bfd7aa76ab7dd2db0911/jetified-play-services-base-17.1.0/AndroidManifest.xml:25:13-37
+121            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+121-->[com.google.android.gms:play-services-base:17.1.0] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/39252603d6a7bfd7aa76ab7dd2db0911/jetified-play-services-base-17.1.0/AndroidManifest.xml:26:13-72
+122
+123        <provider
+123-->[com.google.firebase:firebase-common:20.0.0] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/f354ba22926d1553a14fe516ab59086e/jetified-firebase-common-20.0.0/AndroidManifest.xml:26:9-31:39
+124            android:name="com.google.firebase.provider.FirebaseInitProvider"
+124-->[com.google.firebase:firebase-common:20.0.0] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/f354ba22926d1553a14fe516ab59086e/jetified-firebase-common-20.0.0/AndroidManifest.xml:27:13-77
+125            android:authorities="com.inhatc.attendance.firebaseinitprovider"
+125-->[com.google.firebase:firebase-common:20.0.0] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/f354ba22926d1553a14fe516ab59086e/jetified-firebase-common-20.0.0/AndroidManifest.xml:28:13-72
+126            android:directBootAware="true"
+126-->[com.google.firebase:firebase-common:20.0.0] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/f354ba22926d1553a14fe516ab59086e/jetified-firebase-common-20.0.0/AndroidManifest.xml:29:13-43
+127            android:exported="false"
+127-->[com.google.firebase:firebase-common:20.0.0] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/f354ba22926d1553a14fe516ab59086e/jetified-firebase-common-20.0.0/AndroidManifest.xml:30:13-37
+128            android:initOrder="100" />
+128-->[com.google.firebase:firebase-common:20.0.0] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/f354ba22926d1553a14fe516ab59086e/jetified-firebase-common-20.0.0/AndroidManifest.xml:31:13-36
+129
+130        <meta-data
+130-->[com.google.android.gms:play-services-basement:17.1.0] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/c9d0df3f0988b93d5a5fa39c4fb06ee0/jetified-play-services-basement-17.1.0/AndroidManifest.xml:23:9-25:69
+131            android:name="com.google.android.gms.version"
+131-->[com.google.android.gms:play-services-basement:17.1.0] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/c9d0df3f0988b93d5a5fa39c4fb06ee0/jetified-play-services-basement-17.1.0/AndroidManifest.xml:24:13-58
+132            android:value="@integer/google_play_services_version" />
+132-->[com.google.android.gms:play-services-basement:17.1.0] /Users/eungbinkim/.gradle/caches/transforms-2/files-2.1/c9d0df3f0988b93d5a5fa39c4fb06ee0/jetified-play-services-basement-17.1.0/AndroidManifest.xml:25:13-66
+133    </application>
+134
+135</manifest>

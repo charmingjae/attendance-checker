@@ -15,6 +15,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -36,11 +37,16 @@ public class MainActivity extends AppCompatActivity {
     String res_header = "res";
     DatabaseReference res_Reference = firebase_Database.getReference().child(res_header);
 
+    // User info Firebase
+    String user_header = "consumers";
+    DatabaseReference user_Reference = firebase_Database.getReference().child(user_header);
+
     // Firebase Auth
     FirebaseAuth mAuth;
 
-    // User Phone Number
-    String userPhone;
+    // User's Phone Number & User's Position
+    public static String userPhone;
+    public static String userPosition;
 
     // User Reservation Info
     String start, end, busNumber, phone;
@@ -59,8 +65,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        check_phone = false;
-
         // 레이아웃에서 객체 연결하기
         goLogin = (Button)findViewById(R.id.btnGoLogin);
         goLogout = (Button)findViewById(R.id.btnGoLogout);
@@ -69,25 +73,53 @@ public class MainActivity extends AppCompatActivity {
         goLogout.setVisibility(View.GONE);
         goRegister.setVisibility(View.VISIBLE);
 
+        Log.e("Main2", "TEST");
+
+        try {
+//            userPhone = getIntent().getStringExtra("userPhone");
+//            userPosition = getIntent().getStringExtra("userPosition");
+            Log.e("userPosition", userPosition);
+            goRegister.setVisibility(View.GONE);
+            goLogout.setVisibility(View.VISIBLE);
+
+            Log.e("Main", userPhone);
+
+            if(userPosition.equals("customer")) {
+                goLogin.setText("예약하러가기");
+            } else if(userPosition.equals("driver")) {
+                goLogin.setText("예약목록확인");
+            } else if(userPosition.equals("admin")) {
+                goLogin.setText("괸라자다");
+            }
+        } catch (NullPointerException e) {
+            goLogin.setText("로그인");
+            goRegister.setVisibility(View.VISIBLE);
+            goLogout.setVisibility(View.GONE);
+            Log.e("Null", e.toString());
+        } catch (Exception e) {
+            Log.e("Exception!!!", e.toString());
+        }
+
+        check_phone = false;
+
         // 파이어베이스 auth object
         firebaseAuth = FirebaseAuth.getInstance();
 
-        try {
-            userPhone = mAuth.getInstance().getCurrentUser().getEmail();
-            userPhone = userPhone.substring(0, 11);
-            Log.e("TEST", "처음이야");
-
-            goLogin.setText("예약하러가기");
-            goLogout.setVisibility(View.VISIBLE);
-            goRegister.setVisibility(View.GONE);
-        } catch(NullPointerException e) {
-            Log.e("TEST", "Null 걸림");
-            goLogin.setText("로그인");
-            goLogout.setVisibility(View.GONE);
-            goRegister.setVisibility(View.VISIBLE);
-        } catch (Exception e) {
-            Log.e("Exception", e.toString());
-        }
+//        try {
+//            userPhone = mAuth.getInstance().getCurrentUser().getEmail();
+//            userPhone = userPhone.substring(0, 11);
+//
+//            goLogin.setText("예약하러가기");
+//            goLogout.setVisibility(View.VISIBLE);
+//            goRegister.setVisibility(View.GONE);
+//        } catch(NullPointerException e) {
+//            Log.e("TEST", "Null 걸림");
+//            goLogin.setText("로그인");
+//            goLogout.setVisibility(View.GONE);
+//            goRegister.setVisibility(View.VISIBLE);
+//        } catch (Exception e) {
+//            Log.e("Exception", e.toString());
+//        }
 
         bStop_list = new ArrayList<bStopData>();
 
@@ -124,6 +156,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 firebaseAuth.signOut();
+                userPhone = null;
+                userPosition = null;
                 Intent intent = getIntent();
                 finish();
                 startActivity(intent);
@@ -179,20 +213,42 @@ public class MainActivity extends AppCompatActivity {
                 check_phone = false;
                 Log.e("Changed!!!", "Changed!!!");
 
-                while(child.hasNext()) {
-                    String string_data = child.next().getValue().toString();
-                    String slicing_data[] = string_data.split(",");
-                    phone = slicing_data[0].substring(7, slicing_data[0].lastIndexOf(""));
+//                while(child.hasNext()) {
+//                    String string_data = child.next().getValue().toString();
+//                    String slicing_data[] = string_data.split(",");
+//                    phone = slicing_data[0].substring(7, slicing_data[0].lastIndexOf(""));
+//
+//                    if(phone.equals(userPhone)) {
+//                        busNumber = slicing_data[1].substring(8, slicing_data[1].lastIndexOf(""));
+//                        start = slicing_data[2].substring(7, slicing_data[2].lastIndexOf(""));
+//                        end = slicing_data[3].substring(5, slicing_data[3].lastIndexOf(""));
+//
+//                        check_phone = true;
+//                        goLogin.setText("예약정보확인");
+//                        break;
+//                    }
+//                }
+                try {
+                    if (snapshot.exists()) {
+                        for (DataSnapshot issue : snapshot.getChildren()) {
+                            String phone = issue.child("phone").getValue().toString();
+                            if (userPhone.equals(phone)) {
+                                if ((issue.child("status").getValue().toString().equals("wait")) || (issue.child("status").getValue().toString().equals("ride"))) {
+                                    busNumber = issue.child("busNum").getValue().toString();
+                                    start = issue.child("start").getValue().toString();
+                                    end = issue.child("end").getValue().toString();
 
-                    if(phone.equals(userPhone)) {
-                        busNumber = slicing_data[1].substring(8, slicing_data[1].lastIndexOf(""));
-                        start = slicing_data[2].substring(7, slicing_data[2].lastIndexOf(""));
-                        end = slicing_data[3].substring(5, slicing_data[3].lastIndexOf(""));
-
-                        check_phone = true;
-                        goLogin.setText("예약정보확인");
-                        break;
+                                    check_phone = true;
+                                    goLogin.setText("예약정보확인");
+                                    break;
+                                }
+                            }
+                        }
                     }
+                } catch (NullPointerException e) {
+                    Log.e("Null", e.toString());
+                } catch (Exception e) {
+                    Log.e("Error", e.toString());
                 }
             }
 

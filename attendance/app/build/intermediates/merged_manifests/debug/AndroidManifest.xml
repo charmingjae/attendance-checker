@@ -27,15 +27,14 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.Attendance" >
-        <activity android:name="com.inhatc.attendance.MainActivity" >
+        <activity android:name="com.inhatc.attendance.MainActivity" />
+        <activity android:name="com.inhatc.attendance.LoadingActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!-- Activity -->
+        </activity> <!-- Activity -->
         <activity android:name="com.inhatc.attendance.LoginActivity" />
         <activity android:name="com.inhatc.attendance.RegisterActivity" />
         <activity android:name="com.inhatc.attendance.UserInfoActivity" />
@@ -47,9 +46,7 @@
         <activity android:name="com.inhatc.attendance.ReservationResultActivity" />
         <activity android:name="com.inhatc.attendance.SelectStopActivity" />
         <activity android:name="com.inhatc.attendance.DriverActivity" />
-        <activity android:name="com.inhatc.attendance.ReservationStatusActivity" />
-
-        <!-- Fixing point -->
+        <activity android:name="com.inhatc.attendance.ReservationStatusActivity" /> <!-- Fixing point -->
         <service android:name="com.inhatc.attendance.ConnectService" />
 
         <receiver android:name="com.inhatc.attendance.BluetoothChangedReceiver" >

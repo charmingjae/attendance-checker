@@ -110,8 +110,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                                         Toast.makeText(RegisterActivity.this, "회원가입 완료", Toast.LENGTH_SHORT).show();
                                         progressDialog.dismiss();
                                         finish();
+                                        startActivity(new Intent(getApplicationContext(), LoadingActivity.class));
                                         return;
-//                                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
                                     }
                                 })
                                 .addOnFailureListener(new OnFailureListener() {
@@ -222,6 +222,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                     @Override
                     public void onSuccess(AuthResult authResult) {
                         Toast.makeText(RegisterActivity.this, "인증되었습니다.", Toast.LENGTH_SHORT).show();
+                        edtPhoneValid.setText(credential.getSmsCode());
                         doRegister.setEnabled(true);
                         firebaseAuth.signOut();
                     }

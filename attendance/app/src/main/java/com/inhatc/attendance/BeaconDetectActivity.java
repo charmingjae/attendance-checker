@@ -339,6 +339,7 @@ public class BeaconDetectActivity extends AppCompatActivity {
         busNodeThread.list_route.clear();
         Intent intent = new Intent(BeaconDetectActivity.this, MainActivity.class);
         startActivity(intent);
+//        finish();
     }
 
 

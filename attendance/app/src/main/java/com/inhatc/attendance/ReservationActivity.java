@@ -102,13 +102,23 @@ public class ReservationActivity extends AppCompatActivity implements View.OnCli
         mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Iterator<DataSnapshot> child = snapshot.getChildren().iterator();
-
-                while(child.hasNext()) {
-                    if(child.next().child("phone").getValue().equals(userPhone)) {
-                        check_phone = true;
-                        break;
+                try {
+                    if (snapshot.exists()) {
+                        for (DataSnapshot issue : snapshot.getChildren()) {
+                            String phone = issue.child("phone").getValue().toString();
+                            if (userPhone.equals(phone)) {
+                                if ((issue.child("status").getValue().toString().equals("wait")) || (issue.child("status").getValue().toString().equals("ride"))) {
+                                    busNumber = issue.child("busNum").getValue().toString();
+                                    check_phone = true;
+                                    break;
+                                }
+                            }
+                        }
                     }
+                } catch (NullPointerException e) {
+                    Log.e("Null", e.toString());
+                } catch (Exception e) {
+                    Log.e("Error", e.toString());
                 }
             }
 

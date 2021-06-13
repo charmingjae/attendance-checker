@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.inhatc.attendance">
-    
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
@@ -14,34 +13,30 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Attendance"
-        android:networkSecurityConfig="@xml/network_security_config">
-        <activity android:name=".MainActivity">
+        android:theme="@style/Theme.Attendance">
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".LoadingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-<!--        Activity-->
-        <activity android:name=".LoginActivity"></activity>
-        <activity android:name=".RegisterActivity"></activity>
-        <activity android:name=".UserInfoActivity"></activity>
-        <activity android:name=".RssiActivity"></activity>
-
-        <activity android:name=".DetilActivity"></activity>
-        <activity android:name=".SelectBusActivity"/>
-        <activity android:name=".BeaconDetectActivity"/>
-        <activity android:name=".ReservationActivity"/>
-        <activity android:name=".ReservationResultActivity"/>
-        <activity android:name=".SelectStopActivity"/>
-        <activity android:name=".DriverActivity"/>
-        <activity android:name=".ReservationStatusActivity"/>
-
-<!--        Fixing point-->
+        </activity> <!-- Activity -->
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".UserInfoActivity" />
+        <activity android:name=".RssiActivity" />
+        <activity android:name=".DetilActivity" />
+        <activity android:name=".SelectBusActivity" />
+        <activity android:name=".BeaconDetectActivity" />
+        <activity android:name=".ReservationActivity" />
+        <activity android:name=".ReservationResultActivity" />
+        <activity android:name=".SelectStopActivity" />
+        <activity android:name=".DriverActivity" />
+        <activity android:name=".ReservationStatusActivity" /> <!-- Fixing point -->
         <service android:name=".ConnectService" />
 
         <receiver android:name=".BluetoothChangedReceiver">

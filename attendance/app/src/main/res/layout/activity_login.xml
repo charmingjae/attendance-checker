@@ -47,7 +47,8 @@
         android:layout_gravity="center"
         android:layout_marginTop="40dp"
         android:backgroundTint="@color/black"
-        android:textCursorDrawable="@color/black"/>
+        android:textCursorDrawable="@color/black"
+        android:inputType="textPassword"/>
     <Button
         android:id="@+id/btnDoLogin"
         android:layout_width="300dp"

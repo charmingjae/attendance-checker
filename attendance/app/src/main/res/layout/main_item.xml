@@ -16,44 +16,45 @@
             <TextView
                 android:id="@+id/device_name"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:text="n/a"
                 android:textColor="@android:color/black"
-                android:textSize="18sp"/>
+                android:textSize="18sp"
+                android:textAlignment="center" />
 
-            <TextView
-                android:id="@+id/device_connectable"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="10dp"
-                />
+<!--            <TextView-->
+<!--                android:id="@+id/device_connectable"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_alignParentRight="true"-->
+<!--                android:layout_marginRight="10dp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                />-->
 
         </RelativeLayout>
 
-        <TextView
-            android:id="@+id/device_uuid"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"/>
+<!--        <TextView-->
+<!--            android:id="@+id/device_uuid"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="10dp"-->
+<!--            android:layout_marginTop="10dp"/>-->
 
-        <TextView
-            android:id="@+id/device_other"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"/>
+<!--        <TextView-->
+<!--            android:id="@+id/device_other"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="10dp"-->
+<!--            android:layout_marginTop="10dp"/>-->
 
-        <TextView
-            android:id="@+id/device_status"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp" />
+<!--        <TextView-->
+<!--            android:id="@+id/device_status"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="10dp"-->
+<!--            android:layout_marginTop="10dp" />-->
     </LinearLayout>
 
 </RelativeLayout>

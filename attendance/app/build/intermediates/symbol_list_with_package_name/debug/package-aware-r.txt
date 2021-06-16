@@ -1883,6 +1883,7 @@ id cos
 id counterclockwise
 id custom
 id customPanel
+id customer
 id cut
 id dark
 id data
@@ -1900,11 +1901,7 @@ id design_menu_item_text
 id design_navigation_view
 id detil_recyeler
 id detil_toolbar
-id device_connectable
 id device_name
-id device_other
-id device_status
-id device_uuid
 id dialog_button
 id dimensions
 id direct
@@ -1918,11 +1915,13 @@ id dragLeft
 id dragRight
 id dragStart
 id dragUp
+id driver
 id dropdown_menu
 id easeIn
 id easeInOut
 id easeOut
 id edit_query
+id edtBusNum
 id edtLoginNUM
 id edtLoginPW
 id edtPassword
@@ -2079,6 +2078,7 @@ id peekHeight
 id percent
 id pin
 id position
+id positionGroup
 id postLayout
 id progress_circular
 id progress_horizontal

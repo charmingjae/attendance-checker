@@ -104,6 +104,36 @@
         android:layout_marginTop="20dp"
         android:backgroundTint="@color/black"
         android:textCursorDrawable="@color/black"/>
+    <RadioGroup
+        android:id="@+id/positionGroup"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/black"
+        android:orientation="horizontal">
+        <RadioButton
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="이용객"
+            android:id="@+id/customer"/>
+        <RadioButton
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="운전기사"
+            android:id="@+id/driver"/>
+    </RadioGroup>
+    <EditText
+        android:id="@+id/edtBusNum"
+        android:hint="운행하는 노선 번호 입력(ex. 511)"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/black"
+        android:textCursorDrawable="@color/black"/>
 
     <Button
         android:id="@+id/btnDoRegister"

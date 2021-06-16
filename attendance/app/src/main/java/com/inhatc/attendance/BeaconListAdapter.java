@@ -108,19 +108,19 @@ public class BeaconListAdapter extends RecyclerView.Adapter<com.inhatc.attendanc
 
         private MinewBeacon mMinewBeacon;
         private final TextView mDevice_name;
-        private final TextView mDevice_uuid;
-        private final TextView mDevice_other;
-        private final TextView mConnectable;
-        private final TextView mdevice_status;
+//        private final TextView mDevice_uuid;
+//        private final TextView mDevice_other;
+//        private final TextView mConnectable;
+//        private final TextView mdevice_status;
 
 
         public MyViewHolder(View itemView) {
             super(itemView);
             mDevice_name = (TextView) itemView.findViewById(R.id.device_name);
-            mDevice_uuid = (TextView) itemView.findViewById(R.id.device_uuid);
-            mDevice_other = (TextView) itemView.findViewById(R.id.device_other);
-            mConnectable = (TextView) itemView.findViewById(R.id.device_connectable);
-            mdevice_status = (TextView) itemView.findViewById(R.id.device_status);
+//            mDevice_uuid = (TextView) itemView.findViewById(R.id.device_uuid);
+//            mDevice_other = (TextView) itemView.findViewById(R.id.device_other);
+//            mConnectable = (TextView) itemView.findViewById(R.id.device_connectable);
+//            mdevice_status = (TextView) itemView.findViewById(R.id.device_status);
 
         }
 
@@ -143,18 +143,18 @@ public class BeaconListAdapter extends RecyclerView.Adapter<com.inhatc.attendanc
             } else {
                 mDevice_name.setText(mMinewBeacon.getName());
             }
-            mDevice_uuid.setText("UUID:" + mMinewBeacon.getUuid());
-            if (mMinewBeacon.isConnectable()) {
-                mConnectable.setText("CONN: YES");
-            } else {
-                mConnectable.setText("CONN: NO");
-            }
+//            mDevice_uuid.setText("UUID:" + mMinewBeacon.getUuid());
+//            if (mMinewBeacon.isConnectable()) {
+//                mConnectable.setText("CONN: YES");
+//            } else {
+//                mConnectable.setText("CONN: NO");
+//            }
             String format = String.format("Major:%s Minor:%s Rssi:%s Battery:%s",
                     mMinewBeacon.getMajor(),
                     mMinewBeacon.getMinor(),
                     mMinewBeacon.getRssi(),
                     mMinewBeacon.getBattery());
-            mDevice_other.setText(format);
+//            mDevice_other.setText(format);
 
             int getRssi = Integer.parseInt(String.valueOf(mMinewBeacon.getRssi()));
             String rssiStatus = "";
@@ -166,7 +166,7 @@ public class BeaconListAdapter extends RecyclerView.Adapter<com.inhatc.attendanc
                 rssiStatus = "양호";
             }
 
-            mdevice_status.setText(rssiStatus);
+//            mdevice_status.setText(rssiStatus);
 
         }
     }

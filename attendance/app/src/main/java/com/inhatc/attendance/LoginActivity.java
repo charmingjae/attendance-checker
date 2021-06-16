@@ -99,6 +99,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         String email = edtLoginNUM.getText().toString().trim();
         String password = edtLoginPW.getText().toString().trim();
 
+        email += "@itc.ac.kr";
+
         progressDialog = new ProgressDialog(LoginActivity.this);
         progressDialog.setMessage("로그인중입니다. 잠시 기다려 주세요...");
         progressDialog.show();

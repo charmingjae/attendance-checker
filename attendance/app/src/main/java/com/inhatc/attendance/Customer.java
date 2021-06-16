@@ -5,6 +5,7 @@ public class Customer {
     public String userId;
     public String userName;
     public String userPosition;
+    public String busNum;
 
     public Customer() {
         // Default constructor required for calls to DataSnapshot.getValue(User.class)
@@ -14,6 +15,14 @@ public class Customer {
         this.userId = userId;
         this.userName = userName;
         this.userPosition = userPosition;
+    }
+
+    public Customer(String userId, String userName, String userPosition, String busNum) {
+        this.userId = userId;
+        this.userName = userName;
+        this.userPosition = userPosition;
+        this.busNum = busNum;
+
     }
 
     public String getUserId() {
@@ -31,6 +40,10 @@ public class Customer {
     public String getUserPosition() {return userPosition;}
 
     public void setUserPosition(String userPosition) {this.userPosition = userPosition;}
+
+    public String getBusNum() {return busNum;}
+
+    public void setBusNum(String busNum) {this.busNum = busNum;}
 
 
     @Override

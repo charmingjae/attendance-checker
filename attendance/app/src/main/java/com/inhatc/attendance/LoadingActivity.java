@@ -30,6 +30,7 @@ public class LoadingActivity extends AppCompatActivity {
 
     String userPhone;
     String userPosition;
+    String driverBusNum;
 
     // User info Firebase
     FirebaseDatabase firebase_Database = FirebaseDatabase.getInstance();
@@ -61,6 +62,9 @@ public class LoadingActivity extends AppCompatActivity {
                             String userId = issue.child("userId").getValue().toString().substring(0, 11);
                             if(userPhone.equals(userId)) {
                                 userPosition = issue.child("userPosition").getValue().toString();
+                                if(userPosition.equals("driver")) {
+                                    driverBusNum = issue.child("busNum").getValue().toString();
+                                }
                             }
                         }
                     }
@@ -81,6 +85,13 @@ public class LoadingActivity extends AppCompatActivity {
 //                intent.putExtra("userPosition", userPosition);
                 MainActivity.userPhone = userPhone;
                 MainActivity.userPosition = userPosition;
+                try {
+                    if (userPosition.equals("driver")) {
+                        MainActivity.driverBusNum = driverBusNum;
+                    }
+                } catch (Exception e) {
+                    Log.e("Exception", e.toString());
+                }
                 startActivity(intent);
                 mpDialog.dismiss();
             }

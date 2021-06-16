@@ -164,16 +164,17 @@ public class ReservationStatusActivity extends AppCompatActivity {
                 if(snapshot.exists()){
                     Log.i("Status : ", "exists");
                     for(DataSnapshot issue : snapshot.getChildren()){
+                        if(MainActivity.driverBusNum.equals(issue.child("busNum").getValue().toString())) {
+                            String start = issue.child("start").getValue().toString();
+                            String end = issue.child("end").getValue().toString();
+                            String phone = issue.child("phone").getValue().toString();
 
-                        String start = issue.child("start").getValue().toString();
-                        String end = issue.child("end").getValue().toString();
-                        String phone = issue.child("phone").getValue().toString();
+                            Log.i("RETURN VALUE NAME : ", start);
+                            Log.i("RETURN VALUE NAME : ", end);
+                            Log.i("RETURN VALUE NAME : ", phone);
 
-                        Log.i("RETURN VALUE NAME : ", start);
-                        Log.i("RETURN VALUE NAME : ", end);
-                        Log.i("RETURN VALUE NAME : ", phone);
-
-                        list_1.add(new SampleData(start,end,phone));
+                            list_1.add(new SampleData(start, end, phone));
+                        }
 
                     }
                 }
@@ -201,15 +202,17 @@ public class ReservationStatusActivity extends AppCompatActivity {
                 if(snapshot.exists()){
                     for(DataSnapshot issue : snapshot.getChildren()){
 
-                        String start = issue.child("start").getValue().toString();
-                        String end = issue.child("end").getValue().toString();
-                        String phone = issue.child("phone").getValue().toString();
+                        if(MainActivity.driverBusNum.equals(issue.child("busNum").getValue().toString())) {
+                            String start = issue.child("start").getValue().toString();
+                            String end = issue.child("end").getValue().toString();
+                            String phone = issue.child("phone").getValue().toString();
 
-                        Log.i("RETURN VALUE NAME : ", start);
-                        Log.i("RETURN VALUE NAME : ", end);
-                        Log.i("RETURN VALUE NAME : ", phone);
+                            Log.i("RETURN VALUE NAME : ", start);
+                            Log.i("RETURN VALUE NAME : ", end);
+                            Log.i("RETURN VALUE NAME : ", phone);
 
-                        list_2.add(new SampleData(start,end,phone));
+                            list_2.add(new SampleData(start, end, phone));
+                        }
 
                     }
                 }myAdapter_2.notifyDataSetChanged();

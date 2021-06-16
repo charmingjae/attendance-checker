@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -35,8 +36,10 @@ import java.util.concurrent.TimeUnit;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener{
 
-    EditText userEmail, userPassword, pwConfirm, userName, userPhone, edtPhoneValid;
+    EditText userEmail, userPassword, pwConfirm, userName, userPhone, edtPhoneValid, driverBusNum;
     Button doRegister, btnPhoneValid, btnChkCode;
+    RadioGroup userPosition;
+    String selected_position;
 
     ProgressDialog progressDialog;
     FirebaseAuth firebaseAuth;
@@ -59,10 +62,14 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         pwConfirm = (EditText)findViewById(R.id.edtPasswordConfirm);
         userName = (EditText)findViewById(R.id.edtUserName);
         edtPhoneValid = (EditText)findViewById(R.id.edtPhoneValid);
+        driverBusNum = (EditText)findViewById(R.id.edtBusNum);
 
         doRegister = (Button)findViewById(R.id.btnDoRegister);
         btnPhoneValid = (Button)findViewById(R.id.btnPhoneValid);
         btnChkCode = (Button)findViewById(R.id.btnChkCode);
+
+        userPosition = (RadioGroup)findViewById(R.id.positionGroup);
+        userPosition.setOnCheckedChangeListener(radioGroupButtonChangeListener);
 
         firebaseAuth = FirebaseAuth.getInstance();
 
@@ -70,8 +77,23 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         btnPhoneValid.setOnClickListener(this);
         btnChkCode.setOnClickListener(this);
 
+        driverBusNum.setVisibility(View.GONE);
+
         mDatabase = FirebaseDatabase.getInstance().getReference();
     }
+
+    RadioGroup.OnCheckedChangeListener radioGroupButtonChangeListener = new RadioGroup.OnCheckedChangeListener() {
+        @Override
+        public void onCheckedChanged(RadioGroup radioGroup, int i) {
+            if(i == R.id.customer) {
+                driverBusNum.setVisibility(View.GONE);
+                selected_position = "customer";
+            } else if(i == R.id.driver) {
+                driverBusNum.setVisibility(View.VISIBLE);
+                selected_position = "driver";
+            }
+        }
+    };
 
     private void doRegister(){
 //        String email = userEmail.getText().toString().trim();
@@ -81,8 +103,12 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         String strUserName = userName.getText().toString().trim();
 
         if(pwd.equals(strPasswordConfirm)) {
-
-            Customer customer = new Customer(email, strUserName, "customer");
+            Customer customer;
+            if(selected_position.equals("customer")) {
+                customer = new Customer(email, strUserName, selected_position);
+            } else {
+                customer = new Customer(email, strUserName, selected_position, driverBusNum.getText().toString());
+            }
 
             Log.v("RegisterActivity email", email);
             Log.v("RegisterActivity pwd", pwd);

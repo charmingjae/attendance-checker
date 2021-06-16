@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
     // User's Phone Number & User's Position
     public static String userPhone;
     public static String userPosition;
+    public static String driverBusNum;
 
     // User Reservation Info
     String start, end, busNumber, phone;

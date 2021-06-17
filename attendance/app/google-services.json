@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "38180281934",
+    "firebase_url": "https://beacon-205db-default-rtdb.firebaseio.com",
     "project_id": "beacon-205db",
     "storage_bucket": "beacon-205db.appspot.com"
   },
@@ -13,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "38180281934-5v4n22bf0c0i1hkgghmr5cqsa31d0a5a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.inhatc.attendance",
+            "certificate_hash": "f3086b384f2b953ad2c7ab2fc6f830840ce80ba3"
+          }
+        },
         {
           "client_id": "38180281934-bpgpq8if3tpi6qcl2pk7cv5r9d9n7el2.apps.googleusercontent.com",
           "client_type": 3

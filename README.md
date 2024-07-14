@@ -45,7 +45,7 @@ Minew beacon E7
 
 1. Clone
 ~~~bash
-git clone https://github.com/charmingjae/beacon_attendance
+git clone https://github.com/charmingjae/attendance-checker.git
 ~~~  
 
 2. Turn on the device Bluetooth  
